@@ -5,14 +5,14 @@
   <!-- Head END -->
   <body>
     <!-- Top Header START -->
-    <div class="hidden bg-[#ecebf3] py-3 font-semibold lg:block">
+    <div class="py-3 font-semibold lg:block hidden bg-[#ecebf3]">
       <div class="container">
         <div class="flex items-center justify-between">
-          <ul class="flex items-center gap-8">
+          <ul class="gap-8 flex items-center">
             <li>
               <a
                 href="tel:+380983763762"
-                class="group flex items-center gap-1.5"
+                class="group gap-1.5 flex items-center"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@
                 <span class="group-hover:opacity-80">+38 (098) 37-63-762</span>
               </a>
             </li>
-            <li class="flex items-center gap-1.5">
+            <li class="gap-1.5 flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6 text-rose-500 opacity-80"
@@ -50,7 +50,7 @@
               <span>Харків, провулок Зерновий, 1, 61105</span>
             </li>
             <li>
-              <a href="#" class="group flex items-center gap-1.5">
+              <a href="#" class="group gap-1.5 flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-6 w-6 text-rose-500 opacity-80 group-hover:opacity-100"
@@ -70,7 +70,7 @@
           </ul>
 
           <!-- Social Icons START -->
-          <ul class="flex items-center gap-3">
+          <ul class="gap-3 flex items-center">
             <li>
               <a href="#">
                 <svg
@@ -141,8 +141,8 @@
     <!-- Main Header START -->
     <header>
       <div class="container">
-        <nav class="flex items-center gap-8 py-2 lg:justify-between">
-          <div class="flex flex-col gap-4 md:flex-row md:items-center xl:gap-7">
+        <nav class="gap-8 py-2 lg:justify-between flex items-center">
+          <div class="gap-4 md:flex-row md:items-center xl:gap-7 flex flex-col">
             <a href="#">
               <img
                 src="images/logo2.png"
@@ -153,10 +153,11 @@
             <ul>
               <li>
                 <span
-                  class="relative text-lg font-semibold text-white xl:text-2xl"
+                  class="text-lg font-semibold text-white xl:text-2xl relative"
                 >
                   <svg
-                    class="xl:w-114 absolute left-[-14] top-[-2px] -z-10 h-8 w-80 fill-current text-rose-400 xl:left-[-22] xl:h-10"
+                    class="xl:w-114 h-8 w-80 text-rose-400 xl:left-[-22] xl:h-10 absolute top-[-2px]
+                      left-[-14] -z-10 fill-current"
                     viewBox="0 0 366 62.1"
                     preserveAspectRatio="none"
                   >
@@ -175,7 +176,7 @@
 
           <!-- Burger button open START -->
           <button
-            class="ml-auto inline-block lg:hidden"
+            class="lg:hidden ml-auto inline-block"
             @click="openMenu = !openMenu"
             :aria-expanded="openMenu"
             aria-controls="mobile-navigation"
@@ -200,19 +201,21 @@
 
           <!-- Main Menu START -->
           <ul
-            class="hidden gap-x-3 gap-y-3 lg:grid lg:auto-cols-auto lg:grid-flow-col lg:grid-rows-2 xl:gap-x-6 xl:text-lg 2xl:gap-x-8"
+            class="gap-x-3 gap-y-3 lg:grid lg:auto-cols-auto lg:grid-flow-col lg:grid-rows-2
+              xl:gap-x-6 xl:text-lg 2xl:gap-x-8 hidden"
           >
             <!-- First row -->
             <li class="contents">
-              <a href="#" class="whitespace-nowrap font-semibold text-rose-500">
+              <a href="#" class="font-semibold text-rose-500 whitespace-nowrap">
                 Головна
               </a>
             </li>
             <li class="contents">
-              <div class="expand-hover-area z-2 group relative">
+              <div class="expand-hover-area group relative z-2">
                 <a
                   href="#"
-                  class="flex items-center gap-1 whitespace-nowrap font-semibold transition-colors hover:text-rose-500"
+                  class="gap-1 font-semibold hover:text-rose-500 flex items-center whitespace-nowrap
+                    transition-colors"
                 >
                   Про школу
                   <svg
@@ -229,12 +232,15 @@
                   </svg>
                 </a>
                 <ul
-                  class="absolute left-1/2 top-full z-50 mt-2 hidden w-max -translate-x-1/2 whitespace-nowrap rounded-xl border-2 border-t-2 border-solid border-rose-500 bg-white font-semibold opacity-0 shadow-lg transition-opacity duration-200 group-hover:block group-hover:opacity-100"
+                  class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute
+                    top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-t-2
+                    border-solid whitespace-nowrap transition-opacity duration-200 group-hover:block
+                    group-hover:opacity-100"
                 >
                   <li>
                     <a
                       href="#"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Історія школи
                     </a>
@@ -242,7 +248,7 @@
                   <li>
                     <a
                       href="#"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Проєктна діяльність
                     </a>
@@ -250,7 +256,7 @@
                   <li>
                     <a
                       href="#"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Символіка школи
                     </a>
@@ -258,7 +264,7 @@
                   <li>
                     <a
                       href="gallery.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Галерея
                     </a>
@@ -267,10 +273,11 @@
               </div>
             </li>
             <li class="contents">
-              <div class="expand-hover-area z-3 group relative">
+              <div class="expand-hover-area group relative z-3">
                 <a
                   href="#"
-                  class="flex items-center gap-1 whitespace-nowrap font-semibold transition-colors hover:text-rose-500"
+                  class="gap-1 font-semibold hover:text-rose-500 flex items-center whitespace-nowrap
+                    transition-colors"
                 >
                   Відділення
                   <svg
@@ -287,24 +294,27 @@
                   </svg>
                 </a>
                 <ul
-                  class="absolute left-1/2 top-full z-50 mt-2 hidden w-max -translate-x-1/2 whitespace-nowrap rounded-xl border-2 border-solid border-rose-500 bg-white font-semibold opacity-0 shadow-lg transition-opacity duration-200 group-hover:block group-hover:opacity-100"
+                  class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute
+                    top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-solid
+                    whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:block
+                    group-hover:opacity-100"
                 >
                   <li>
                     <a
                       href="music-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Музичне відділення
                     </a>
                   </li>
                   <li>
                     <ul
-                      class="flex flex-col pl-3 lg:gap-1 lg:pl-6 lg:font-semibold"
+                      class="pl-3 lg:gap-1 lg:pl-6 lg:font-semibold flex flex-col"
                     >
                       <li>
                         <a
                           href="piano-violin-department.html"
-                          class="block px-6 py-2 transition-colors hover:text-rose-500"
+                          class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >
                           Фортепіанно-струнний відділ
                         </a>
@@ -312,7 +322,7 @@
                       <li>
                         <a
                           href="folk-spiritual-department.html"
-                          class="block px-6 py-2 transition-colors hover:text-rose-500"
+                          class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >
                           Народно-духовий відділ
                         </a>
@@ -320,7 +330,7 @@
                       <li>
                         <a
                           href="vocal-choral-department.html"
-                          class="block px-6 py-2 transition-colors hover:text-rose-500"
+                          class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >
                           Вокально-хоровий відділ
                         </a>
@@ -328,7 +338,7 @@
                       <li>
                         <a
                           href="music-theory-department.html"
-                          class="block px-6 py-2 transition-colors hover:text-rose-500"
+                          class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >
                           Музично-теоретичний відділ
                         </a>
@@ -338,7 +348,7 @@
                   <li>
                     <a
                       href="painting-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Художнє відділення
                     </a>
@@ -346,7 +356,7 @@
                   <li>
                     <a
                       href="theater-choreography-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Театрально-хореографічне відділення
                     </a>
@@ -354,7 +364,7 @@
                   <li>
                     <a
                       href="additional-services-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Додаткові освітні платні послуги
                     </a>
@@ -362,7 +372,7 @@
                   <li>
                     <a
                       href="inclusion-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Інклюзивна початкова мистецька освіта
                     </a>
@@ -370,7 +380,7 @@
                   <li>
                     <a
                       href="psychology-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Психолог
                     </a>
@@ -378,7 +388,7 @@
                   <li>
                     <a
                       href="online-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Дистанційне відділення
                     </a>
@@ -386,7 +396,7 @@
                   <li>
                     <a
                       href="library-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Бібліотека
                     </a>
@@ -395,10 +405,11 @@
               </div>
             </li>
             <li class="contents">
-              <div class="expand-hover-area z-2 group relative">
+              <div class="expand-hover-area group relative z-2">
                 <a
                   href="#"
-                  class="flex items-center gap-1 whitespace-nowrap font-semibold transition-colors hover:text-rose-500"
+                  class="gap-1 font-semibold hover:text-rose-500 flex items-center whitespace-nowrap
+                    transition-colors"
                 >
                   Адміністрація
                   <svg
@@ -415,12 +426,15 @@
                   </svg>
                 </a>
                 <ul
-                  class="absolute left-1/2 top-full z-50 mt-2 hidden w-max -translate-x-1/2 whitespace-nowrap rounded-xl border-2 border-solid border-rose-500 bg-white font-semibold opacity-0 shadow-lg transition-opacity duration-200 group-hover:block group-hover:opacity-100"
+                  class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute
+                    top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-solid
+                    whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:block
+                    group-hover:opacity-100"
                 >
                   <li>
                     <a
                       href="music-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Кравчук Оксана Вікторівна
                     </a>
@@ -428,7 +442,7 @@
                   <li>
                     <a
                       href="painting-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Новікова Тетяна Сергіївна
                     </a>
@@ -436,7 +450,7 @@
                   <li>
                     <a
                       href="theater-choreography-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Вініченко Марина Володимирівна
                     </a>
@@ -444,7 +458,7 @@
                   <li>
                     <a
                       href="additional-services-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Шугай Алевтина Олександрівна
                     </a>
@@ -452,7 +466,7 @@
                   <li>
                     <a
                       href="inclusion-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Бубнова Олена Володимирівна
                     </a>
@@ -461,10 +475,11 @@
               </div>
             </li>
             <li class="contents">
-              <div class="expand-hover-area z-3 group relative">
+              <div class="expand-hover-area group relative z-3">
                 <a
                   href="#"
-                  class="flex items-center gap-1 whitespace-nowrap font-semibold transition-colors hover:text-rose-500"
+                  class="gap-1 font-semibold hover:text-rose-500 flex items-center whitespace-nowrap
+                    transition-colors"
                 >
                   Викладачі
                   <svg
@@ -481,24 +496,27 @@
                   </svg>
                 </a>
                 <ul
-                  class="absolute left-1/2 top-full z-50 mt-2 hidden w-max -translate-x-1/2 whitespace-nowrap rounded-xl border-2 border-solid border-rose-500 bg-white font-semibold opacity-0 shadow-lg transition-opacity duration-200 group-hover:block group-hover:opacity-100"
+                  class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute
+                    top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-solid
+                    whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:block
+                    group-hover:opacity-100"
                 >
                   <li>
                     <a
                       href="music-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Музичне відділення
                     </a>
                   </li>
                   <li>
                     <ul
-                      class="flex flex-col pl-3 lg:gap-1 lg:pl-6 lg:font-semibold"
+                      class="pl-3 lg:gap-1 lg:pl-6 lg:font-semibold flex flex-col"
                     >
                       <li>
                         <a
                           href="piano-violin-department.html"
-                          class="block px-6 py-2 transition-colors hover:text-rose-500"
+                          class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >
                           Фортепіанно-струнний відділ
                         </a>
@@ -506,7 +524,7 @@
                       <li>
                         <a
                           href="folk-spiritual-department.html"
-                          class="block px-6 py-2 transition-colors hover:text-rose-500"
+                          class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >
                           Народно-духовий відділ
                         </a>
@@ -514,7 +532,7 @@
                       <li>
                         <a
                           href="vocal-choral-department.html"
-                          class="block px-6 py-2 transition-colors hover:text-rose-500"
+                          class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >
                           Вокально-хоровий відділ
                         </a>
@@ -522,7 +540,7 @@
                       <li>
                         <a
                           href="music-theory-department.html"
-                          class="block px-6 py-2 transition-colors hover:text-rose-500"
+                          class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >
                           Музично-теоретичний відділ
                         </a>
@@ -532,7 +550,7 @@
                   <li>
                     <a
                       href="painting-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Художнє відділення
                     </a>
@@ -540,7 +558,7 @@
                   <li>
                     <a
                       href="theater-choreography-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Театральний клас
                     </a>
@@ -548,7 +566,7 @@
                   <li>
                     <a
                       href="additional-services-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Хореографічний клас
                     </a>
@@ -556,7 +574,7 @@
                   <li>
                     <a
                       href="inclusion-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Інклюзивна початкова мистецька освіта
                     </a>
@@ -564,7 +582,7 @@
                   <li>
                     <a
                       href="psychology-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Психолог
                     </a>
@@ -572,7 +590,7 @@
                   <li>
                     <a
                       href="library-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Бібліотека
                     </a>
@@ -583,10 +601,11 @@
 
             <!-- Second row -->
             <li class="contents">
-              <div class="expand-hover-area z-2 group relative">
+              <div class="expand-hover-area group relative z-2">
                 <a
                   href="#"
-                  class="flex items-center gap-1 whitespace-nowrap font-semibold transition-colors hover:text-rose-500"
+                  class="gap-1 font-semibold hover:text-rose-500 flex items-center whitespace-nowrap
+                    transition-colors"
                 >
                   Корисна інформація
                   <svg
@@ -603,12 +622,15 @@
                   </svg>
                 </a>
                 <ul
-                  class="absolute left-1/2 top-full z-50 mt-2 hidden w-max -translate-x-1/2 whitespace-nowrap rounded-xl border-2 border-solid border-rose-500 bg-white font-semibold opacity-0 shadow-lg transition-opacity duration-200 group-hover:block group-hover:opacity-100"
+                  class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute
+                    top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-solid
+                    whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:block
+                    group-hover:opacity-100"
                 >
                   <li>
                     <a
                       href="music-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Викладачам
                     </a>
@@ -616,7 +638,7 @@
                   <li>
                     <a
                       href="painting-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Батькам
                     </a>
@@ -624,7 +646,7 @@
                   <li>
                     <a
                       href="theater-choreography-department.html"
-                      class="block px-6 py-2 transition-colors hover:text-rose-500"
+                      class="px-6 py-2 hover:text-rose-500 block transition-colors"
                     >
                       Нормативна база
                     </a>
@@ -635,7 +657,7 @@
             <li class="contents">
               <a
                 href="#"
-                class="whitespace-nowrap font-semibold transition-colors hover:text-rose-500"
+                class="font-semibold hover:text-rose-500 whitespace-nowrap transition-colors"
               >
                 Новини
               </a>
@@ -643,7 +665,7 @@
             <li class="contents">
               <a
                 href="#"
-                class="whitespace-nowrap font-semibold transition-colors hover:text-rose-500"
+                class="font-semibold hover:text-rose-500 whitespace-nowrap transition-colors"
               >
                 Події
               </a>
@@ -651,7 +673,7 @@
             <li class="contents">
               <a
                 href="#"
-                class="whitespace-nowrap font-semibold transition-colors hover:text-rose-500"
+                class="font-semibold hover:text-rose-500 whitespace-nowrap transition-colors"
               >
                 Контакти
               </a>
@@ -663,7 +685,8 @@
         <!-- Mobile Navigation START -->
         <nav
           id="mobile-navigation"
-          class="fixed bottom-0 left-0 right-0 top-0 z-10 overflow-y-auto overflow-x-hidden bg-gray-100 p-5 transition-all"
+          class="bottom-0 left-0 right-0 top-0 bg-gray-100 p-5 fixed z-10 overflow-x-hidden
+            overflow-y-auto transition-all"
           :class="openMenu ? 'visible translate-x-0' : 'invisible translate-x-full'"
           x-cloak
         >
@@ -696,35 +719,35 @@
             <li>
               <a
                 href="index.html"
-                class="block py-2 text-xl font-bold text-teal-600"
+                class="py-2 text-xl font-bold text-teal-600 block"
               >
                 Головна
               </a>
             </li>
             <li>
-              <a href="about.html" class="block py-2 text-xl font-bold">
+              <a href="about.html" class="py-2 text-xl font-bold block">
                 Про школу
               </a>
               <ul class="pl-3">
                 <li>
-                  <a href="#" class="block py-2 text-xl font-semibold">
+                  <a href="#" class="py-2 text-xl font-semibold block">
                     Історія школи
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="block py-2 text-xl font-semibold">
+                  <a href="#" class="py-2 text-xl font-semibold block">
                     Проєктна діяльність
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="block py-2 text-xl font-semibold">
+                  <a href="#" class="py-2 text-xl font-semibold block">
                     Символіка школи
                   </a>
                 </li>
                 <li>
                   <a
                     href="gallery.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Галерея
                   </a>
@@ -732,14 +755,14 @@
               </ul>
             </li>
             <li>
-              <a href="departments.html" class="block py-2 text-xl font-bold">
+              <a href="departments.html" class="py-2 text-xl font-bold block">
                 Відділення
               </a>
               <ul class="pl-3">
                 <li>
                   <a
                     href="music-department.html"
-                    class="block py-2 text-xl font-bold"
+                    class="py-2 text-xl font-bold block"
                   >
                     Музичне відділення
                   </a>
@@ -747,7 +770,7 @@
                     <li>
                       <a
                         href="piano-violin-department.html"
-                        class="block py-2 text-xl font-semibold"
+                        class="py-2 text-xl font-semibold block"
                       >
                         Фортепіанно-струнний відділ
                       </a>
@@ -755,7 +778,7 @@
                     <li>
                       <a
                         href="folk-spiritual-department.html"
-                        class="block py-2 text-xl font-semibold"
+                        class="py-2 text-xl font-semibold block"
                       >
                         Народно-духовий відділ
                       </a>
@@ -763,7 +786,7 @@
                     <li>
                       <a
                         href="vocal-choral-department.html"
-                        class="block py-2 text-xl font-semibold"
+                        class="py-2 text-xl font-semibold block"
                       >
                         Вокально-хоровий відділ
                       </a>
@@ -771,7 +794,7 @@
                     <li>
                       <a
                         href="music-theory-department.html"
-                        class="block py-2 text-xl font-semibold"
+                        class="py-2 text-xl font-semibold block"
                       >
                         Музично-теоретичний відділ
                       </a>
@@ -781,7 +804,7 @@
                 <li>
                   <a
                     href="painting-department.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Художнє відділення
                   </a>
@@ -789,7 +812,7 @@
                 <li>
                   <a
                     href="theater-choreography-department.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Театрально-хореографічне відділення
                   </a>
@@ -797,7 +820,7 @@
                 <li>
                   <a
                     href="additional-services-department.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Додаткові освітні платні послуги
                   </a>
@@ -805,7 +828,7 @@
                 <li>
                   <a
                     href="inclusion-department.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Інклюзивна початкова мистецька освіта
                   </a>
@@ -813,7 +836,7 @@
                 <li>
                   <a
                     href="psychology-department.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Психолог
                   </a>
@@ -821,7 +844,7 @@
                 <li>
                   <a
                     href="online-department.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Дистанційне відділення
                   </a>
@@ -829,7 +852,7 @@
                 <li>
                   <a
                     href="library-department.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Бібліотека
                   </a>
@@ -839,7 +862,7 @@
             <li>
               <a
                 href="administration.html"
-                class="block py-2 text-xl font-bold"
+                class="py-2 text-xl font-bold block"
               >
                 Адміністрація
               </a>
@@ -847,7 +870,7 @@
                 <li>
                   <a
                     href="profile.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Кравчук Оксана Вікторівна
                   </a>
@@ -855,7 +878,7 @@
                 <li>
                   <a
                     href="profile.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Новікова Тетяна Сергіївна
                   </a>
@@ -863,7 +886,7 @@
                 <li>
                   <a
                     href="profile.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Вініченко Марина Володимирівна
                   </a>
@@ -871,7 +894,7 @@
                 <li>
                   <a
                     href="profile.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Шугай Алевтина Олександрівна
                   </a>
@@ -879,7 +902,7 @@
                 <li>
                   <a
                     href="profile.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Бубнова Олена Володимирівна
                   </a>
@@ -887,14 +910,14 @@
               </ul>
             </li>
             <li>
-              <a href="teachers.html" class="block py-2 text-xl font-bold">
+              <a href="teachers.html" class="py-2 text-xl font-bold block">
                 Викладачі
               </a>
               <ul class="pl-3">
                 <li>
                   <a
                     href="teachers-music-department.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Музичне відділення
                   </a>
@@ -902,7 +925,7 @@
                     <li>
                       <a
                         href="teachers-list.html"
-                        class="block py-2 text-xl font-semibold"
+                        class="py-2 text-xl font-semibold block"
                       >
                         Фортепіанно-струнний відділ
                       </a>
@@ -910,7 +933,7 @@
                     <li>
                       <a
                         href="teachers-list.html"
-                        class="block py-2 text-xl font-semibold"
+                        class="py-2 text-xl font-semibold block"
                       >
                         Народно-духовий відділ
                       </a>
@@ -918,7 +941,7 @@
                     <li>
                       <a
                         href="teachers-list.html"
-                        class="block py-2 text-xl font-semibold"
+                        class="py-2 text-xl font-semibold block"
                       >
                         Вокально-хоровий відділ
                       </a>
@@ -926,7 +949,7 @@
                     <li>
                       <a
                         href="teachers-list.html"
-                        class="block py-2 text-xl font-semibold"
+                        class="py-2 text-xl font-semibold block"
                       >
                         Музично-теоретичний відділ
                       </a>
@@ -936,7 +959,7 @@
                 <li>
                   <a
                     href="teachers-list.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Художнє відділення
                   </a>
@@ -944,7 +967,7 @@
                 <li>
                   <a
                     href="teachers-list.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Театральний клас
                   </a>
@@ -952,7 +975,7 @@
                 <li>
                   <a
                     href="teachers-list.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Хореографічний клас
                   </a>
@@ -960,7 +983,7 @@
                 <li>
                   <a
                     href="teachers-list.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Інклюзивна початкова мистецька освіта
                   </a>
@@ -968,7 +991,7 @@
                 <li>
                   <a
                     href="teachers-list.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Психолог
                   </a>
@@ -976,7 +999,7 @@
                 <li>
                   <a
                     href="teachers-list.html"
-                    class="block py-2 text-xl font-semibold"
+                    class="py-2 text-xl font-semibold block"
                   >
                     Бібліотека
                   </a>
@@ -986,37 +1009,37 @@
             <li>
               <a
                 href="useful-information.html"
-                class="block py-2 text-xl font-bold"
+                class="py-2 text-xl font-bold block"
               >
                 Корисна інформація
               </a>
               <ul class="pl-3">
                 <li>
-                  <a href="#" class="block py-2 text-xl font-semibold">
+                  <a href="#" class="py-2 text-xl font-semibold block">
                     Викладачам
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="block py-2 text-xl font-semibold">
+                  <a href="#" class="py-2 text-xl font-semibold block">
                     Батькам
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="block py-2 text-xl font-semibold">
+                  <a href="#" class="py-2 text-xl font-semibold block">
                     Нормативна база
                   </a>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="news-blog.html" class="block py-2 text-xl font-semibold">
+              <a href="news-blog.html" class="py-2 text-xl font-semibold block">
                 Новини
               </a>
             </li>
             <li>
               <a
                 href="events-blog.html"
-                class="block py-2 text-xl font-semibold"
+                class="py-2 text-xl font-semibold block"
               >
                 Події
               </a>
@@ -1024,7 +1047,7 @@
             <li>
               <a
                 href="contact-us.html"
-                class="block py-2 text-xl font-semibold"
+                class="py-2 text-xl font-semibold block"
               >
                 Контакти
               </a>
@@ -1038,37 +1061,44 @@
     <main>
       <!-- Hero START -->
       <section
-        class="pt-25 z-1 before:-z-1 relative bg-[#f8e8e9] before:absolute before:inset-0 before:bg-[url('../images/rectangle_before.png')] before:bg-top before:bg-no-repeat before:content-[''] after:absolute after:inset-0 after:-z-10 after:bg-[url('../images/rectangle_after.png')] after:bg-bottom after:bg-no-repeat after:content-['']"
+        class="pt-25 before:inset-0 after:inset-0 relative z-1 bg-[#f8e8e9] before:absolute
+          before:-z-1 before:bg-[url('../images/rectangle_before.png')] before:bg-top
+          before:bg-no-repeat before:content-[''] after:absolute after:-z-10
+          after:bg-[url('../images/rectangle_after.png')] after:bg-bottom
+          after:bg-no-repeat after:content-['']"
       >
         <div class="px-30 mx-auto">
-          <div class="grid grid-cols-2 gap-4">
-            <div class="z-1 relative flex flex-col items-center text-center">
+          <div class="gap-4 grid grid-cols-2">
+            <div class="relative z-1 flex flex-col items-center text-center">
               <img src="images/bird.png" class="mb-4" alt="bird" />
               <h1 class="max-w-120 mb-4 text-6xl font-black leading-[1.04]">
                 A lifetime of
                 <span class="text-7xl">Confidence</span>
                 starts here
               </h1>
-              <p class="max-w-131 mx-auto mb-4">
+              <p class="max-w-131 mb-4 mx-auto">
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua."
               </p>
               <a
                 href="#"
-                class="rounded-4xl z-1 relative mt-2.5 inline-block overflow-hidden border border-dashed border-rose-400 bg-transparent px-14 py-4 font-bold text-white before:absolute before:inset-0 before:-z-10 before:m-1 before:rounded-[30px] before:bg-rose-400 before:transition-all before:duration-300 hover:before:m-0"
+                class="rounded-4xl mt-2.5 border-rose-400 px-14 py-4 font-bold text-white
+                  before:inset-0 before:m-1 before:bg-rose-400 hover:before:m-0 relative z-1
+                  inline-block overflow-hidden border border-dashed bg-transparent before:absolute
+                  before:-z-10 before:rounded-[30px] before:transition-all before:duration-300"
               >
                 Докладніше
               </a>
               <img
                 src="images/circle.png"
-                class="-z-1 absolute inset-x-0 top-4"
+                class="inset-x-0 top-4 absolute -z-1"
                 alt="decor circle"
               />
             </div>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="gap-4 grid grid-cols-2">
               <img
                 src="images/kid1.png"
-                class="parallax transition-transform duration-300 ease-out"
+                class="parallax ease-out transition-transform duration-300"
                 style="transform: translate(4.67px, 11.23px)"
                 data-offset-x="4.67"
                 data-offset-y="11.23"
@@ -1077,7 +1107,7 @@
               />
               <img
                 src="images/kid2.png"
-                class="parallax transition-transform duration-300 ease-out"
+                class="parallax ease-out transition-transform duration-300"
                 style="transform: translate(5.34px, 21.46px)"
                 data-offset-x="5.34"
                 data-offset-y="21.46"
@@ -1086,7 +1116,7 @@
               />
               <img
                 src="images/kid3.png"
-                class="parallax transition-transform duration-300 ease-out"
+                class="parallax ease-out transition-transform duration-300"
                 style="transform: translate(7.99px, 31.69px)"
                 data-offset-x="7.99"
                 data-offset-y="31.69"
@@ -1095,7 +1125,7 @@
               />
               <img
                 src="images/kid4.png"
-                class="parallax transition-transform duration-300 ease-out"
+                class="parallax ease-out transition-transform duration-300"
                 style="transform: translate(16.32px, 42px)"
                 data-offset-x="16.32"
                 data-offset-y="42"
@@ -1106,32 +1136,32 @@
           </div>
           <img
             src="images/shape1.png"
-            class="-z-2 absolute left-0 top-0"
+            class="left-0 top-0 absolute -z-2"
             alt="hero shape 1"
           />
           <img
             src="images/shape2.png"
-            class="-z-2 absolute right-0 top-0"
+            class="right-0 top-0 absolute -z-2"
             alt="hero shape 2"
           />
           <img
             src="images/shape3.png"
-            class="animate-movebounce -bottom-15 absolute left-0"
+            class="animate-movebounce -bottom-15 left-0 absolute"
             alt="hero shape 3"
           />
           <img
             src="images/shape4.png"
-            class="animate-rotate -z-1 absolute bottom-[12%] left-[44%]"
+            class="animate-rotate absolute bottom-[12%] left-[44%] -z-1"
             alt="hero shape 4"
           />
           <img
             src="images/shape5.png"
-            class="animate-movebounce -z-1 absolute left-[48%] top-[16%]"
+            class="animate-movebounce absolute top-[16%] left-[48%] -z-1"
             alt="hero shape 5"
           />
           <img
             src="images/shape6.png"
-            class="animate-moveleftbounce -z-1 absolute bottom-[25%] left-[50%]"
+            class="animate-moveleftbounce absolute bottom-[25%] left-[50%] -z-1"
             alt="hero shape 6"
           />
         </div>

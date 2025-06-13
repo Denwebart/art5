@@ -1,10 +1,9 @@
 {
-  "tailwindStylesheet": "./assets/css/style.css",
+  "tailwindStylesheet": "./src/css/style.css",
   "arrowParens": "always",
   "bracketSpacing": true,
   "htmlWhitespaceSensitivity": "css",
   "insertPragma": false,
-  "jsxBracketSameLine": false,
   "jsxSingleQuote": true,
   "printWidth": 80,
   "proseWrap": "always",
@@ -15,5 +14,19 @@
   "tabWidth": 2,
   "trailingComma": "all",
   "useTabs": false,
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-classnames",
+    "prettier-plugin-merge"
+  ],
+  "customAttributes": ["class"],
+  "customFunctions": ["clsx", "cn"],
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "parser": "html"
+      }
+    }
+  ]
 }

@@ -3,30 +3,31 @@
 		"@11ty/eleventy": "^3.1.1",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^3.5.3",
+		"prettier-plugin-classnames": "^0.7.8",
+		"prettier-plugin-merge": "^0.7.4",
 		"prettier-plugin-tailwindcss": "^0.6.12",
 		"rimraf": "^6.0.1",
 		"serve": "^14.2.4"
 	},
 	"scripts": {
-		"dev": "run-s build:initial dev:parallel dev:open",
-		"dev:parallel": "run-p css:watch eleventy:serve",
+		"dev": "run-s build:initial && run-p css:watch eleventy:serve dev:open",
 		"build": "run-s clean css:build eleventy:build",
-		"build:initial": "run-s clean css:build eleventy:build:quiet",
 		"clean": "rimraf dist",
-		"css:watch": "npx tailwindcss -i src/css/input.css -o src/css/style.css --watch --minify",
-		"css:build": "npx tailwindcss -i src/css/input.css -o src/css/style.css --minify",
+		"css:watch": "tailwindcss -i src/css/input.css -o src/css/style.css --watch --minify",
+		"css:build": "tailwindcss -i src/css/input.css -o src/css/style.css --minify",
 		"eleventy:serve": "eleventy --serve --port=8080 --quiet",
 		"eleventy:build": "eleventy",
+		"build:initial": "run-s clean css:build eleventy:build:quiet",
 		"eleventy:build:quiet": "eleventy --quiet",
 		"format": "prettier --write .",
 		"start": "pnpm run dev",
-		"preview": "pnpm run build && pnpm run serve:dist",
-		"serve:dist": "npx serve dist -p 8080 -s --host 0.0.0.0",
+		"preview": "run-s build serve:dist",
+		"serve:dist": "serve dist -p 8080 -s --host 0.0.0.0",
 		"dev:open": "start chrome http://localhost:8080"
 	},
-	"packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912",
 	"dependencies": {
-		"@tailwindcss/cli": "^4.1.8",
-		"tailwindcss": "^4.1.8"
-	}
+		"@tailwindcss/cli": "^4.1.10",
+		"tailwindcss": "^4.1.10"
+	},
+	"packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac"
 }
