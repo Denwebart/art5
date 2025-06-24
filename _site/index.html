@@ -2,15 +2,15 @@
 <html lang="uk">
   <!-- Head START -->
   <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Дитяча школа мистецтв №5 Харківської міської ради</title>
-  <link href="css/style.css" rel="stylesheet" />
-  <script defer src="js/app.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Дитяча школа мистецтв №5 Харківської міської ради</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script defer="" src="js/app.js"></script>
 
-  <!-- AlpineJS Core minified -->
-  <script defer src="js/alpinejs-3.14.8.min.js"></script>
-</head>
+    <!-- AlpineJS Core minified -->
+    <script defer="" src="js/alpinejs-3.14.8.min.js"></script>
+  </head>
 
   <!-- Head END -->
   <body>
@@ -36,7 +36,7 @@
                 >
                   <path
                     d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                  />
+                  ></path>
                 </svg>
                 <span class="group-hover:opacity-80">+38 (098) 37-63-762</span>
               </a>
@@ -54,8 +54,8 @@
               >
                 <path
                   d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
-                />
-                <circle cx="12" cy="10" r="3" />
+                ></path>
+                <circle cx="12" cy="10" r="3"></circle>
               </svg>
               <span>Харків, провулок Зерновий, 1, 61105</span>
             </li>
@@ -71,8 +71,8 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 >
-                  <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
-                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
                 </svg>
                 <span class="group-hover:opacity-80">muz_shkola@i.ua</span>
               </a>
@@ -146,6 +146,7 @@
         </div>
       </div>
     </div>
+
     <!-- Top Header END -->
 
     <!-- Main Header START -->
@@ -154,11 +155,44 @@
         <nav class="gap-8 py-2 lg:justify-between flex items-center">
           <div class="gap-4 md:flex-row md:items-center xl:gap-7 flex flex-col">
             <a href="#">
-              <img
-                src="images/logo2.png"
-                class="h-18 w-18 2xl:h-20 2xl:w-20"
-                alt="logo"
-              />
+              <picture
+                ><source
+                  type="image/avif"
+                  srcset="
+                    images/logo/logo-light-72.avif   72w,
+                    images/logo/logo-light-100.avif 100w,
+                    images/logo/logo-light-144.avif 144w,
+                    images/logo/logo-light-200.avif 200w,
+                    images/logo/logo-light-300.avif 300w
+                  "
+                  sizes="(min-width: 1536px) 100px, 72px" />
+                <source
+                  type="image/webp"
+                  srcset="
+                    images/logo/logo-light-72.webp   72w,
+                    images/logo/logo-light-100.webp 100w,
+                    images/logo/logo-light-144.webp 144w,
+                    images/logo/logo-light-200.webp 200w,
+                    images/logo/logo-light-300.webp 300w
+                  "
+                  sizes="(min-width: 1536px) 100px, 72px" />
+                <img
+                  loading="eager"
+                  decoding="async"
+                  src="images/logo/logo-light-72.png"
+                  alt="Логотип компании Art5"
+                  class="h-18 w-18 2xl:h-25 2xl:w-25"
+                  width="300"
+                  height="300"
+                  srcset="
+                    images/logo/logo-light-72.png   72w,
+                    images/logo/logo-light-100.png 100w,
+                    images/logo/logo-light-144.png 144w,
+                    images/logo/logo-light-200.png 200w,
+                    images/logo/logo-light-300.png 300w
+                  "
+                  sizes="(min-width: 1536px) 100px, 72px"
+              /></picture>
             </a>
             <ul>
               <li>
@@ -166,8 +200,7 @@
                   class="text-lg font-semibold text-white xl:text-2xl relative"
                 >
                   <svg
-                    class="xl:w-114 h-8 w-80 text-rose-400 xl:left-[-22] xl:h-10 absolute top-[-2px]
-                      left-[-14] -z-10 fill-current"
+                    class="xl:w-114 h-8 w-80 text-rose-400 xl:left-[-22] xl:h-10 absolute top-[-2px] left-[-14] -z-10 fill-current"
                     viewBox="0 0 366 62.1"
                     preserveAspectRatio="none"
                   >
@@ -202,17 +235,16 @@
               stroke-linecap="round"
               stroke-linejoin="round"
             >
-              <path d="M4 12h16" />
-              <path d="M4 18h16" />
-              <path d="M4 6h16" />
+              <path d="M4 12h16"></path>
+              <path d="M4 18h16"></path>
+              <path d="M4 6h16"></path>
             </svg>
           </button>
           <!-- Burger button open END -->
 
           <!-- Main Menu START -->
           <ul
-            class="gap-x-3 gap-y-3 lg:grid lg:auto-cols-auto lg:grid-flow-col lg:grid-rows-2
-              xl:gap-x-6 xl:text-lg 2xl:gap-x-8 hidden"
+            class="gap-x-3 gap-y-3 lg:grid lg:auto-cols-auto lg:grid-flow-col lg:grid-rows-2 xl:gap-x-6 xl:text-lg 2xl:gap-x-8 hidden"
           >
             <!-- First row -->
             <li class="contents">
@@ -224,8 +256,7 @@
               <div class="expand-hover-area group relative z-2">
                 <a
                   href="#"
-                  class="gap-1 font-semibold hover:text-rose-500 flex items-center whitespace-nowrap
-                    transition-colors"
+                  class="gap-1 font-semibold hover:text-rose-500 flex items-center whitespace-nowrap transition-colors"
                 >
                   Про школу
                   <svg
@@ -238,14 +269,11 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    <path d="m6 9 6 6 6-6" />
+                    <path d="m6 9 6 6 6-6"></path>
                   </svg>
                 </a>
                 <ul
-                  class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute
-                    top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-t-2
-                    border-solid whitespace-nowrap transition-opacity duration-200 group-hover:block
-                    group-hover:opacity-100"
+                  class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-t-2 border-solid whitespace-nowrap transition-opacity duration-200 group-hover:block group-hover:opacity-100"
                 >
                   <li>
                     <a
@@ -286,8 +314,7 @@
               <div class="expand-hover-area group relative z-3">
                 <a
                   href="#"
-                  class="gap-1 font-semibold hover:text-rose-500 flex items-center whitespace-nowrap
-                    transition-colors"
+                  class="gap-1 font-semibold hover:text-rose-500 flex items-center whitespace-nowrap transition-colors"
                 >
                   Відділення
                   <svg
@@ -300,14 +327,11 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    <path d="m6 9 6 6 6-6" />
+                    <path d="m6 9 6 6 6-6"></path>
                   </svg>
                 </a>
                 <ul
-                  class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute
-                    top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-solid
-                    whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:block
-                    group-hover:opacity-100"
+                  class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-solid whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:block group-hover:opacity-100"
                 >
                   <li>
                     <a
@@ -418,8 +442,7 @@
               <div class="expand-hover-area group relative z-2">
                 <a
                   href="#"
-                  class="gap-1 font-semibold hover:text-rose-500 flex items-center whitespace-nowrap
-                    transition-colors"
+                  class="gap-1 font-semibold hover:text-rose-500 flex items-center whitespace-nowrap transition-colors"
                 >
                   Адміністрація
                   <svg
@@ -432,14 +455,11 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    <path d="m6 9 6 6 6-6" />
+                    <path d="m6 9 6 6 6-6"></path>
                   </svg>
                 </a>
                 <ul
-                  class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute
-                    top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-solid
-                    whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:block
-                    group-hover:opacity-100"
+                  class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-solid whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:block group-hover:opacity-100"
                 >
                   <li>
                     <a
@@ -488,8 +508,7 @@
               <div class="expand-hover-area group relative z-3">
                 <a
                   href="#"
-                  class="gap-1 font-semibold hover:text-rose-500 flex items-center whitespace-nowrap
-                    transition-colors"
+                  class="gap-1 font-semibold hover:text-rose-500 flex items-center whitespace-nowrap transition-colors"
                 >
                   Викладачі
                   <svg
@@ -502,14 +521,11 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    <path d="m6 9 6 6 6-6" />
+                    <path d="m6 9 6 6 6-6"></path>
                   </svg>
                 </a>
                 <ul
-                  class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute
-                    top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-solid
-                    whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:block
-                    group-hover:opacity-100"
+                  class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-solid whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:block group-hover:opacity-100"
                 >
                   <li>
                     <a
@@ -614,8 +630,7 @@
               <div class="expand-hover-area group relative z-2">
                 <a
                   href="#"
-                  class="gap-1 font-semibold hover:text-rose-500 flex items-center whitespace-nowrap
-                    transition-colors"
+                  class="gap-1 font-semibold hover:text-rose-500 flex items-center whitespace-nowrap transition-colors"
                 >
                   Корисна інформація
                   <svg
@@ -628,14 +643,11 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    <path d="m6 9 6 6 6-6" />
+                    <path d="m6 9 6 6 6-6"></path>
                   </svg>
                 </a>
                 <ul
-                  class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute
-                    top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-solid
-                    whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:block
-                    group-hover:opacity-100"
+                  class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-solid whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:block group-hover:opacity-100"
                 >
                   <li>
                     <a
@@ -695,10 +707,9 @@
         <!-- Mobile Navigation START -->
         <nav
           id="mobile-navigation"
-          class="bottom-0 left-0 right-0 top-0 bg-gray-100 p-5 fixed z-10 overflow-x-hidden
-            overflow-y-auto transition-all"
+          class="bottom-0 left-0 right-0 top-0 bg-gray-100 p-5 fixed z-10 overflow-x-hidden overflow-y-auto transition-all"
           :class="openMenu ? 'visible translate-x-0' : 'invisible translate-x-full'"
-          x-cloak
+          x-cloak=""
         >
           <!-- Burger button close START -->
           <button
@@ -720,7 +731,7 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M6 18 18 6M6 6l12 12"
-              />
+              ></path>
             </svg>
           </button>
           <!-- Burger button close END -->
@@ -1067,20 +1078,28 @@
         <!-- Mobile Navigation END -->
       </div>
     </header>
+
     <!-- Main Header END -->
     <main>
       <!-- Hero START -->
       <section
-        class="pt-25 before:inset-0 after:inset-0 relative z-1 bg-[#f8e8e9] before:absolute
-          before:-z-1 before:bg-[url('../images/rectangle_before.png')] before:bg-top
-          before:bg-no-repeat before:content-[''] after:absolute after:-z-10
-          after:bg-[url('../images/rectangle_after.png')] after:bg-bottom
-          after:bg-no-repeat after:content-['']"
+        class="pt-25 before:inset-0 after:inset-0 relative z-1 bg-[#f8e8e9] before:absolute before:-z-1 before:bg-[url('../images/rectangle_before.png')] before:bg-top before:bg-no-repeat before:content-[''] after:absolute after:-z-10 after:bg-[url('../images/rectangle_after.png')] after:bg-bottom after:bg-no-repeat after:content-['']"
       >
         <div class="px-30 mx-auto">
           <div class="gap-4 grid grid-cols-2">
             <div class="relative z-1 flex flex-col items-center text-center">
-              <img src="images/bird.png" class="mb-4" alt="bird" />
+              <picture
+                ><source type="image/avif" srcset="images/bird-173.avif 173w" />
+                <source type="image/webp" srcset="images/bird-173.webp 173w" />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="images/bird-173.png"
+                  class="mb-4"
+                  alt="bird"
+                  width="173"
+                  height="147"
+              /></picture>
               <h1 class="max-w-120 mb-4 text-6xl font-black leading-[1.04]">
                 A lifetime of
                 <span class="text-7xl">Confidence</span>
@@ -1092,88 +1111,212 @@
               </p>
               <a
                 href="#"
-                class="rounded-4xl mt-2.5 border-rose-400 px-14 py-4 font-bold text-white
-                  before:inset-0 before:m-1 before:bg-rose-400 hover:before:m-0 relative z-1
-                  inline-block overflow-hidden border border-dashed bg-transparent before:absolute
-                  before:-z-10 before:rounded-[30px] before:transition-all before:duration-300"
+                class="rounded-4xl mt-2.5 border-rose-400 px-14 py-4 font-bold text-white before:inset-0 before:m-1 before:bg-rose-400 hover:before:m-0 relative z-1 inline-block overflow-hidden border border-dashed bg-transparent before:absolute before:-z-10 before:rounded-[30px] before:transition-all before:duration-300"
               >
                 Докладніше
               </a>
-              <img
-                src="images/circle.png"
-                class="inset-x-0 top-4 absolute -z-1"
-                alt="decor circle"
-              />
+              <picture
+                ><source
+                  type="image/avif"
+                  srcset="
+                    images/circle-320.avif 320w,
+                    images/circle-480.avif 480w,
+                    images/circle-640.avif 640w,
+                    images/circle-768.avif 768w,
+                    images/circle-900.avif 900w
+                  "
+                  sizes="auto" />
+                <source
+                  type="image/webp"
+                  srcset="
+                    images/circle-320.webp 320w,
+                    images/circle-480.webp 480w,
+                    images/circle-640.webp 640w,
+                    images/circle-768.webp 768w,
+                    images/circle-900.webp 900w
+                  "
+                  sizes="auto" />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="images/circle-320.png"
+                  class="inset-x-0 top-4 absolute -z-1"
+                  alt="decor circle"
+                  width="900"
+                  height="646"
+                  srcset="
+                    images/circle-320.png 320w,
+                    images/circle-480.png 480w,
+                    images/circle-640.png 640w,
+                    images/circle-768.png 768w,
+                    images/circle-900.png 900w
+                  "
+                  sizes="auto"
+              /></picture>
             </div>
             <div class="gap-4 grid grid-cols-2">
-              <img
-                src="images/kid1.png"
-                class="parallax ease-out transition-transform duration-300"
-                style="transform: translate(4.67px, 11.23px)"
-                data-offset-x="4.67"
-                data-offset-y="11.23"
-                data-speed="10"
-                alt="kid 1"
-              />
-              <img
-                src="images/kid2.png"
-                class="parallax ease-out transition-transform duration-300"
-                style="transform: translate(5.34px, 21.46px)"
-                data-offset-x="5.34"
-                data-offset-y="21.46"
-                data-speed="12"
-                alt="kid 2"
-              />
-              <img
-                src="images/kid3.png"
-                class="parallax ease-out transition-transform duration-300"
-                style="transform: translate(7.99px, 31.69px)"
-                data-offset-x="7.99"
-                data-offset-y="31.69"
-                data-speed="8"
-                alt="kid 3"
-              />
-              <img
-                src="images/kid4.png"
-                class="parallax ease-out transition-transform duration-300"
-                style="transform: translate(16.32px, 42px)"
-                data-offset-x="16.32"
-                data-offset-y="42"
-                data-speed="15"
-                alt="kid 4"
-              />
+              <picture
+                ><source type="image/avif" srcset="images/kid1-300.avif 300w" />
+                <source type="image/webp" srcset="images/kid1-300.webp 300w" />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="images/kid1-300.png"
+                  class="parallax ease-out transition-transform duration-300"
+                  style="transform: translate(4.67px, 11.23px)"
+                  data-offset-x="4.67"
+                  data-offset-y="11.23"
+                  data-speed="10"
+                  alt="kid 1"
+                  width="300"
+                  height="414"
+              /></picture>
+              <picture
+                ><source
+                  type="image/avif"
+                  srcset="images/kid2-320.avif 320w, images/kid2-370.avif 370w"
+                  sizes="auto" />
+                <source
+                  type="image/webp"
+                  srcset="images/kid2-320.webp 320w, images/kid2-370.webp 370w"
+                  sizes="auto" />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="images/kid2-320.png"
+                  class="parallax ease-out transition-transform duration-300"
+                  style="transform: translate(5.34px, 21.46px)"
+                  data-offset-x="5.34"
+                  data-offset-y="21.46"
+                  data-speed="12"
+                  alt="kid 2"
+                  width="370"
+                  height="415"
+                  srcset="images/kid2-320.png 320w, images/kid2-370.png 370w"
+                  sizes="auto"
+              /></picture>
+              <picture
+                ><source
+                  type="image/avif"
+                  srcset="images/kid3-320.avif 320w, images/kid3-384.avif 384w"
+                  sizes="auto" />
+                <source
+                  type="image/webp"
+                  srcset="images/kid3-320.webp 320w, images/kid3-384.webp 384w"
+                  sizes="auto" />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="images/kid3-320.png"
+                  class="parallax ease-out transition-transform duration-300"
+                  style="transform: translate(7.99px, 31.69px)"
+                  data-offset-x="7.99"
+                  data-offset-y="31.69"
+                  data-speed="8"
+                  alt="kid 3"
+                  width="384"
+                  height="353"
+                  srcset="images/kid3-320.png 320w, images/kid3-384.png 384w"
+                  sizes="auto"
+              /></picture>
+              <picture
+                ><source
+                  type="image/avif"
+                  srcset="images/kid4-320.avif 320w, images/kid4-330.avif 330w"
+                  sizes="auto" />
+                <source
+                  type="image/webp"
+                  srcset="images/kid4-320.webp 320w, images/kid4-330.webp 330w"
+                  sizes="auto" />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="images/kid4-320.png"
+                  class="parallax ease-out transition-transform duration-300"
+                  style="transform: translate(16.32px, 42px)"
+                  data-offset-x="16.32"
+                  data-offset-y="42"
+                  data-speed="15"
+                  alt="kid 4"
+                  width="330"
+                  height="324"
+                  srcset="images/kid4-320.png 320w, images/kid4-330.png 330w"
+                  sizes="auto"
+              /></picture>
             </div>
           </div>
-          <img
-            src="images/shape1.png"
-            class="left-0 top-0 absolute -z-2"
-            alt="hero shape 1"
-          />
-          <img
-            src="images/shape2.png"
-            class="right-0 top-0 absolute -z-2"
-            alt="hero shape 2"
-          />
-          <img
-            src="images/shape3.png"
-            class="animate-movebounce -bottom-15 left-0 absolute"
-            alt="hero shape 3"
-          />
-          <img
-            src="images/shape4.png"
-            class="animate-rotate absolute bottom-[12%] left-[44%] -z-1"
-            alt="hero shape 4"
-          />
-          <img
-            src="images/shape5.png"
-            class="animate-movebounce absolute top-[16%] left-[48%] -z-1"
-            alt="hero shape 5"
-          />
-          <img
-            src="images/shape6.png"
-            class="animate-moveleftbounce absolute bottom-[25%] left-[50%] -z-1"
-            alt="hero shape 6"
-          />
+          <picture
+            ><source type="image/avif" srcset="images/shape1-292.avif 292w" />
+            <source type="image/webp" srcset="images/shape1-292.webp 292w" />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="images/shape1-292.png"
+              class="left-0 top-0 absolute -z-2"
+              alt="hero shape 1"
+              width="292"
+              height="141"
+          /></picture>
+          <picture
+            ><source type="image/avif" srcset="images/shape2-184.avif 184w" />
+            <source type="image/webp" srcset="images/shape2-184.webp 184w" />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="images/shape2-184.png"
+              class="right-0 top-0 absolute -z-2"
+              alt="hero shape 2"
+              width="184"
+              height="215"
+          /></picture>
+          <picture
+            ><source type="image/avif" srcset="images/shape3-199.avif 199w" />
+            <source type="image/webp" srcset="images/shape3-199.webp 199w" />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="images/shape3-199.png"
+              class="animate-movebounce -bottom-15 left-0 absolute"
+              alt="hero shape 3"
+              width="199"
+              height="260"
+          /></picture>
+          <picture
+            ><source type="image/avif" srcset="images/shape4-59.avif 59w" />
+            <source type="image/webp" srcset="images/shape4-59.webp 59w" />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="images/shape4-59.png"
+              class="animate-rotate absolute bottom-[12%] left-[44%] -z-1"
+              alt="hero shape 4"
+              width="59"
+              height="57"
+          /></picture>
+          <picture
+            ><source type="image/avif" srcset="images/shape5-64.avif 64w" />
+            <source type="image/webp" srcset="images/shape5-64.webp 64w" />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="images/shape5-64.png"
+              class="animate-movebounce absolute top-[16%] left-[48%] -z-1"
+              alt="hero shape 5"
+              width="64"
+              height="66"
+          /></picture>
+          <picture
+            ><source type="image/avif" srcset="images/shape6-110.avif 110w" />
+            <source type="image/webp" srcset="images/shape6-110.webp 110w" />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="images/shape6-110.png"
+              class="animate-moveleftbounce absolute bottom-[25%] left-[50%] -z-1"
+              alt="hero shape 6"
+              width="110"
+              height="109"
+          /></picture>
         </div>
       </section>
       <!-- Hero END -->
@@ -1181,9 +1324,9 @@
 
     <!-- Parallax hero images effect START -->
     <script>
-      const elements = document.querySelectorAll('.parallax');
+      const elements = document.querySelectorAll(".parallax");
 
-      document.addEventListener('mousemove', (e) => {
+      document.addEventListener("mousemove", (e) => {
         const { innerWidth, innerHeight } = window;
         const offsetX = (e.clientX - innerWidth / 2) / (innerWidth / 2);
         const offsetY = (e.clientY - innerHeight / 2) / (innerHeight / 2);
