@@ -9,20 +9,39 @@
         class="lg:flex-row pt-3 lg:items-center lg:justify-between flex
           flex-col"
       >
-        <div
-          class="p-1 lg:hidden border-gray-300 rounded-lg flex w-full
-            justify-end border-2 border-solid"
-        >
+        <div class="p-1 lg:hidden rounded-lg flex w-full justify-between">
+          <!-- Contacts button open START -->
+          <button class="p-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="size-8 text-black"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M13 2a9 9 0 0 1 9 9" />
+              <path d="M13 6a5 5 0 0 1 5 5" />
+              <path
+                d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+              />
+            </svg>
+          </button>
+          <!-- Contacts button open END -->
+
           <!-- Burger button open START -->
           <button
             @click="openMenu = true"
             :aria-expanded="openMenu"
             aria-controls="mobile-navigation"
             aria-label="Меню навігації"
+            class="p-1"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="size-12 text-black"
+              class="size-10 text-black"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -53,7 +72,7 @@
             <ul class="lg:block flex flex-col items-center">
               <li>
                 <span
-                  class="text-xl lg:text-lg font-semibold bg-rose-400 px-2 py-1
+                  class="text-2xl lg:text-lg font-semibold bg-rose-400 px-2 py-1
                     rounded-md text-white xl:text-2xl relative text-nowrap"
                 >
                   Дитяча школа мистецтв №5
