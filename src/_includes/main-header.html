@@ -41,6 +41,7 @@
         class="lg:flex-row pt-3 lg:items-center lg:justify-between flex
           flex-col"
         :class="{ 'lg:justify-between': !isFixed, 'lg:justify-center': isFixed, 'pt-3': !isFixed, 'pt-0': isFixed, 'lg:py-4': isFixed }"
+        :inert="openMenu"
       >
         <div
           class="p-1 lg:hidden rounded-lg relative flex w-full items-center
