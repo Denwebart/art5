@@ -1,13 +1,45 @@
-<header>
-  <div class="container">
-    <div
-      x-data="{ openMenu: false }"
-      x-init="$watch('openMenu', value => document.body.classList.toggle('overflow-hidden', value))"
-      @keydown.escape.window="openMenu = false"
-    >
+<div
+  x-data="{
+  isFixed: false,
+  openMenu: false,
+  isAnimating: false,
+  isInitialized: false,
+  init() {
+    // Set the initial state without animation
+    this.isFixed = window.scrollY > 10;
+    
+    this.$watch('isFixed', (value, oldValue) => {
+      // Animation only after full initialization and when there is a real change
+      if (this.isInitialized && value === true && oldValue === false) {
+        this.isAnimating = true;
+        setTimeout(() => {
+          this.isAnimating = false;
+        }, 500);
+      }
+    });
+    
+    // Помечаем как инициализированный в следующем тике
+    this.$nextTick(() => {
+      this.isInitialized = true;
+    });
+    
+    this.$watch('openMenu', value => document.body.classList.toggle('overflow-hidden', value));
+  }
+}"
+  @scroll.window="isFixed = window.scrollY > 10"
+  @keydown.escape.window="openMenu = false"
+>
+  <header
+    :class="{
+    'fixed top-0 z-50 w-full bg-white shadow-md': isFixed,
+    'animate-fade-in-down': isAnimating
+  }"
+  >
+    <div class="container">
       <nav
         class="lg:flex-row pt-3 lg:items-center lg:justify-between flex
           flex-col"
+        :class="{ 'lg:justify-between': !isFixed, 'lg:justify-center': isFixed, 'pt-3': !isFixed, 'pt-0': isFixed, 'lg:py-4': isFixed }"
       >
         <div class="p-1 lg:hidden rounded-lg flex w-full justify-between">
           <!-- Contacts button open START -->
@@ -57,7 +89,12 @@
           <!-- Burger button open END -->
         </div>
 
-        <div class="p-4 lg:p-0 flex items-center justify-center">
+        <div
+          :class="{
+    'p-4 lg:p-0 flex items-center justify-center': !isFixed,
+    'sr-only': isFixed
+  }"
+        >
           <div class="gap-4 lg:flex-row flex flex-col items-center">
             <a href="#">
               <img
@@ -88,8 +125,12 @@
         </div>
 
         <ul
-          class="gap-x-3 gap-y-3 lg:grid lg:auto-cols-auto lg:grid-flow-col
-            lg:grid-rows-2 xl:gap-x-6 xl:text-lg 2xl:gap-x-8 hidden"
+          class="gap-x-6 xl:text-lg 2xl:gap-x-8 hidden items-center
+            transition-all duration-300"
+          :class="{
+    'lg:grid lg:auto-cols-auto lg:grid-flow-col lg:grid-rows-2 gap-y-3': !isFixed,
+    'lg:flex': isFixed
+  }"
         >
           <li class="contents">
             <a href="#" class="font-semibold text-rose-500 whitespace-nowrap">
@@ -967,5 +1008,5 @@
       </div>
       <!-- Mobile Navigation END -->
     </div>
-  </div>
-</header>
+  </header>
+</div>

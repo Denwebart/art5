@@ -5,6 +5,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Дитяча школа мистецтв №5 Харківської міської ради</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" />
     <link href="css/style.css" rel="stylesheet" />
     <script defer="" src="js/app.js"></script>
 
@@ -153,15 +172,47 @@
     <!-- Top Header END -->
 
     <!-- Main Header START -->
-    <header>
-      <div class="container">
-        <div
-          x-data="{ openMenu: false }"
-          x-init="$watch('openMenu', value => document.body.classList.toggle('overflow-hidden', value))"
-          @keydown.escape.window="openMenu = false"
-        >
+    <div
+      x-data="{
+  isFixed: false,
+  openMenu: false,
+  isAnimating: false,
+  isInitialized: false,
+  init() {
+    // Set the initial state without animation
+    this.isFixed = window.scrollY > 10;
+    
+    this.$watch('isFixed', (value, oldValue) => {
+      // Animation only after full initialization and when there is a real change
+      if (this.isInitialized && value === true && oldValue === false) {
+        this.isAnimating = true;
+        setTimeout(() => {
+          this.isAnimating = false;
+        }, 500);
+      }
+    });
+    
+    // Помечаем как инициализированный в следующем тике
+    this.$nextTick(() => {
+      this.isInitialized = true;
+    });
+    
+    this.$watch('openMenu', value => document.body.classList.toggle('overflow-hidden', value));
+  }
+}"
+      @scroll.window="isFixed = window.scrollY > 10"
+      @keydown.escape.window="openMenu = false"
+    >
+      <header
+        :class="{
+    'fixed top-0 z-50 w-full bg-white shadow-md': isFixed,
+    'animate-fade-in-down': isAnimating
+  }"
+      >
+        <div class="container">
           <nav
             class="lg:flex-row pt-3 lg:items-center lg:justify-between flex flex-col"
+            :class="{ 'lg:justify-between': !isFixed, 'lg:justify-center': isFixed, 'pt-3': !isFixed, 'pt-0': isFixed, 'lg:py-4': isFixed }"
           >
             <div class="p-1 lg:hidden rounded-lg flex w-full justify-between">
               <!-- Contacts button open START -->
@@ -211,7 +262,12 @@
               <!-- Burger button open END -->
             </div>
 
-            <div class="p-4 lg:p-0 flex items-center justify-center">
+            <div
+              :class="{
+    'p-4 lg:p-0 flex items-center justify-center': !isFixed,
+    'sr-only': isFixed
+  }"
+            >
               <div class="gap-4 lg:flex-row flex flex-col items-center">
                 <a href="#">
                   <picture
@@ -268,7 +324,11 @@
             </div>
 
             <ul
-              class="gap-x-3 gap-y-3 lg:grid lg:auto-cols-auto lg:grid-flow-col lg:grid-rows-2 xl:gap-x-6 xl:text-lg 2xl:gap-x-8 hidden"
+              class="gap-x-6 xl:text-lg 2xl:gap-x-8 hidden items-center transition-all duration-300"
+              :class="{
+    'lg:grid lg:auto-cols-auto lg:grid-flow-col lg:grid-rows-2 gap-y-3': !isFixed,
+    'lg:flex': isFixed
+  }"
             >
               <li class="contents">
                 <a
@@ -1091,11 +1151,11 @@
           </div>
           <!-- Mobile Navigation END -->
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
 
     <!-- Main Header END -->
-    <main>
+    <main class="h-500">
       <!-- Hero START -->
       <section
         class="pt-25 before:inset-0 after:inset-0 relative z-1 bg-[#f8e8e9] before:absolute before:-z-1 before:bg-[url('../images/rectangle_before.png')] before:bg-top before:bg-no-repeat before:content-[''] after:absolute after:-z-10 after:bg-[url('../images/rectangle_after.png')] after:bg-bottom after:bg-no-repeat after:content-['']"
