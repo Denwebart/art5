@@ -26,7 +26,9 @@
     "start": "pnpm run dev",
     "preview": "run-s build && browser-sync start --server _site --port 8080 --no-open --no-notify --ghost-mode false",
     "serve:dist": "serve _site -p 8080 -s --host 0.0.0.0",
-    "dev:open": "start chrome http://localhost:8080"
+    "dev:open": "start chrome http://localhost:8080",
+    "gemini-commit": "bash autocommit.sh",
+    "push": "git push origin main"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.11",
