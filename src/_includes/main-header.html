@@ -120,120 +120,187 @@
               x-transition:leave-end="opacity-0 -translate-y-2 scale-95"
               x-cloak
               class="left-0 mt-1 bg-white shadow-xl border-gray-200 rounded-lg
-                absolute top-full z-50 min-w-max border"
-              style="width: max(300px, 80vw)"
+                w-80 sm:max-w-md md:w-96 xl:left-auto xl:right-0 absolute
+                top-full z-50 max-w-[90vw] border"
             >
-              <div class="p-4">
+              <div class="p-4 sm:p-6">
                 <div class="space-y-3">
                   <h3 class="text-lg font-bold text-rose-500 mb-3">Контакти</h3>
 
+                  <!-- Phone -->
                   <a
                     href="tel:+380983763762"
-                    class="gap-2 p-2 rounded-lg hover:bg-gray-50 flex
+                    class="gap-3 p-3 rounded-lg hover:bg-gray-50 group flex
                       items-center transition-colors"
                   >
-                    <svg
-                      class="size-5 text-rose-500 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
+                    <div
+                      class="w-10 h-10 bg-rose-50 group-hover:bg-rose-100 flex
+                        flex-shrink-0 items-center justify-center rounded-full
+                        transition-colors"
                     >
-                      <path
-                        d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
-                      />
-                    </svg>
-                    <span class="font-semibold">+38 (098) 37-63-762</span>
+                      <svg
+                        class="w-5 h-5 text-rose-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                        />
+                      </svg>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                      <span class="font-semibold text-gray-900 block"
+                        >+38 (098) 37-63-762</span
+                      >
+                      <span class="text-xs text-gray-500">Телефонуйте нам</span>
+                    </div>
                   </a>
 
+                  <!-- Email -->
                   <a
                     href="mailto:muz_shkola@i.ua"
-                    class="gap-2 p-2 rounded-lg hover:bg-gray-50 flex
+                    class="gap-3 p-3 rounded-lg hover:bg-gray-50 group flex
                       items-center transition-colors"
                   >
-                    <svg
-                      class="size-5 text-rose-500 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
+                    <div
+                      class="w-10 h-10 bg-rose-50 group-hover:bg-rose-100 flex
+                        flex-shrink-0 items-center justify-center rounded-full
+                        transition-colors"
                     >
-                      <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
-                      <rect x="2" y="4" width="20" height="16" rx="2" />
-                    </svg>
-                    <span class="font-semibold text-sm">muz_shkola@i.ua</span>
+                      <svg
+                        class="w-5 h-5 text-rose-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                      </svg>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                      <span
+                        class="font-semibold text-gray-900 text-sm block
+                          break-all"
+                        >muz_shkola@i.ua</span
+                      >
+                      <span class="text-xs text-gray-500">Напишіть нам</span>
+                    </div>
                   </a>
 
-                  <div class="gap-2 p-2 flex items-center">
-                    <svg
-                      class="size-5 text-rose-500 mt-0.5 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
+                  <!-- Address -->
+                  <div class="gap-3 p-3 flex items-start">
+                    <div
+                      class="w-10 h-10 bg-rose-50 mt-0.5 flex flex-shrink-0
+                        items-center justify-center rounded-full"
                     >
-                      <path
-                        d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
-                      />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    <span class="font-semibold text-sm"
-                      >Харків, провулок Зерновий, 1</span
-                    >
+                      <svg
+                        class="w-5 h-5 text-rose-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                        />
+                        <circle cx="12" cy="10" r="3" />
+                      </svg>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                      <span
+                        class="font-semibold text-gray-900 text-sm leading-snug
+                          block"
+                      >
+                        Харків, провулок Зерновий, 1
+                      </span>
+                      <span class="text-xs text-gray-500">Наша адреса</span>
+                    </div>
                   </div>
 
                   <!-- Social media -->
-                  <div
-                    class="gap-2 p-2 border-gray-100 flex items-center border-t"
-                  >
-                    <span class="text-xs font-semibold text-gray-600"
-                      >Соцмережі:</span
+                  <div class="border-gray-100 pt-2 border-t">
+                    <div
+                      class="gap-3 flex flex-col items-center justify-between"
                     >
-                    <div class="gap-2 flex">
-                      <a href="#" class="transition-opacity hover:opacity-70">
-                        <svg
-                          class="h-5 w-5"
-                          fill="#1877f2"
-                          viewBox="0 0 448 512"
+                      <span class="text-sm font-semibold text-gray-600"
+                        >Ми у соцмережах:</span
+                      >
+                      <div class="gap-3 flex">
+                        <a
+                          href="#"
+                          class="size-12 bg-blue-50 hover:bg-blue-100 group flex
+                            items-center justify-center rounded-full
+                            transition-colors"
                         >
-                          <path
-                            d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"
-                          />
-                        </svg>
-                      </a>
-                      <a href="#" class="transition-opacity hover:opacity-70">
-                        <svg
-                          class="h-5 w-5"
-                          fill="#d33a95"
-                          viewBox="0 0 448 512"
+                          <svg
+                            class="size-6 text-blue-600 transition-transform
+                              group-hover:scale-110"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                            />
+                          </svg>
+                        </a>
+
+                        <a
+                          href="#"
+                          class="size-12 bg-pink-50 hover:bg-pink-100 group flex
+                            items-center justify-center rounded-full
+                            transition-colors"
                         >
-                          <path
-                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-                          />
-                        </svg>
-                      </a>
-                      <a href="#" class="transition-opacity hover:opacity-70">
-                        <svg
-                          class="h-5 w-5"
-                          fill="#3390ec"
-                          viewBox="0 0 496 512"
+                          <svg
+                            class="size-6 text-pink-600 transition-transform
+                              group-hover:scale-110"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                            />
+                          </svg>
+                        </a>
+
+                        <a
+                          href="#"
+                          class="size-12 bg-sky-50 hover:bg-sky-100 group flex
+                            items-center justify-center rounded-full
+                            transition-colors"
                         >
-                          <path
-                            d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z"
-                          />
-                        </svg>
-                      </a>
-                      <a href="#" class="transition-opacity hover:opacity-70">
-                        <svg
-                          class="h-5 w-5"
-                          fill="#ff0000"
-                          viewBox="0 0 576 512"
+                          <svg
+                            class="size-6 text-sky-600 transition-transform
+                              group-hover:scale-110"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+                            />
+                          </svg>
+                        </a>
+
+                        <a
+                          href="#"
+                          class="size-12 bg-red-50 hover:bg-red-100 group flex
+                            items-center justify-center rounded-full
+                            transition-colors"
                         >
-                          <path
-                            d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"
-                          />
-                        </svg>
-                      </a>
+                          <svg
+                            class="size-6 text-red-600 transition-transform
+                              group-hover:scale-110"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                            />
+                          </svg>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
