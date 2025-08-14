@@ -344,12 +344,14 @@
           <div class="gap-3 lg:flex-row flex flex-col items-center">
             <a href="#">
               <img
-                src="images/logo/logo-light.png"
+                src="images/logo/logo-light.svg"
                 alt="Логотип компании Art5"
                 class="lg:size-20 xl:size-25 size-30"
                 loading="eager"
-                eleventy:widths="100, 120, 200, 240"
-                sizes="(min-width: 1280px) 100px, 120px"
+                fetchpriority="high"
+                width="120"
+                height="120"
+                eleventy:ignore
               />
             </a>
             <ul class="lg:block flex flex-col items-center">

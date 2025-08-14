@@ -5,23 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Дитяча школа мистецтв №5 Харківської міської ради</title>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="images/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="images/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="images/favicon/favicon-16x16.png"
-    />
+    <link rel="preload" as="image" href="images/logo/logo-light.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
     <link rel="manifest" href="images/favicon/site.webmanifest" />
     <link rel="shortcut icon" href="images/favicon/favicon.ico" />
     <link href="css/style.css" rel="stylesheet" />
@@ -42,10 +29,7 @@
         <div class="flex items-center justify-between">
           <ul class="gap-8 flex items-center">
             <li>
-              <a
-                href="tel:+380983763762"
-                class="group gap-1.5 flex items-center"
-              >
+              <a href="tel:+380983763762" class="group gap-1.5 flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="size-6 text-rose-500 opacity-80 group-hover:opacity-100"
@@ -216,9 +200,7 @@
             :class="{ 'lg:justify-between': !isFixed, 'lg:justify-center': isFixed, 'pt-3': !isFixed, 'pt-0': isFixed, 'lg:py-4': isFixed }"
             :inert="openMenu"
           >
-            <div
-              class="p-1 lg:hidden rounded-lg relative flex w-full items-center justify-between"
-            >
+            <div class="p-1 lg:hidden rounded-lg relative flex w-full items-center justify-between">
               <!-- Contacts button open START -->
               <div class="relative">
                 <button
@@ -295,9 +277,7 @@
                 >
                   <div class="p-4 sm:p-6">
                     <div class="space-y-3">
-                      <h3 class="text-lg font-bold text-rose-500 mb-3">
-                        Контакти
-                      </h3>
+                      <h3 class="text-lg font-bold text-rose-500 mb-3">Контакти</h3>
 
                       <!-- Phone -->
                       <a
@@ -320,12 +300,8 @@
                           </svg>
                         </div>
                         <div class="min-w-0 flex-1">
-                          <span class="font-semibold text-gray-900 block"
-                            >+38 (098) 37-63-762</span
-                          >
-                          <span class="text-xs text-gray-500"
-                            >Телефонуйте нам</span
-                          >
+                          <span class="font-semibold text-gray-900 block">+38 (098) 37-63-762</span>
+                          <span class="text-xs text-gray-500">Телефонуйте нам</span>
                         </div>
                       </a>
 
@@ -344,26 +320,13 @@
                             stroke="currentColor"
                             stroke-width="2"
                           >
-                            <path
-                              d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                            ></path>
-                            <rect
-                              x="2"
-                              y="4"
-                              width="20"
-                              height="16"
-                              rx="2"
-                            ></rect>
+                            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
                           </svg>
                         </div>
                         <div class="min-w-0 flex-1">
-                          <span
-                            class="font-semibold text-gray-900 text-sm block break-all"
-                            >muz_shkola@i.ua</span
-                          >
-                          <span class="text-xs text-gray-500"
-                            >Напишіть нам</span
-                          >
+                          <span class="font-semibold text-gray-900 text-sm block break-all">muz_shkola@i.ua</span>
+                          <span class="text-xs text-gray-500">Напишіть нам</span>
                         </div>
                       </a>
 
@@ -386,9 +349,7 @@
                           </svg>
                         </div>
                         <div class="min-w-0 flex-1">
-                          <span
-                            class="font-semibold text-gray-900 text-sm leading-snug block"
-                          >
+                          <span class="font-semibold text-gray-900 text-sm leading-snug block">
                             Харків, провулок Зерновий, 1
                           </span>
                           <span class="text-xs text-gray-500">Наша адреса</span>
@@ -397,12 +358,8 @@
 
                       <!-- Social media -->
                       <div class="border-gray-100 pt-2 border-t">
-                        <div
-                          class="gap-3 flex flex-col items-center justify-between"
-                        >
-                          <span class="text-sm font-semibold text-gray-600"
-                            >Ми у соцмережах:</span
-                          >
+                        <div class="gap-3 flex flex-col items-center justify-between">
+                          <span class="text-sm font-semibold text-gray-600">Ми у соцмережах:</span>
                           <div class="gap-3 flex">
                             <a
                               href="#"
@@ -506,41 +463,15 @@
             >
               <div class="gap-3 lg:flex-row flex flex-col items-center">
                 <a href="#">
-                  <picture
-                    ><source
-                      type="image/avif"
-                      srcset="
-                        images/logo/logo-light-100.avif 100w,
-                        images/logo/logo-light-120.avif 120w,
-                        images/logo/logo-light-200.avif 200w,
-                        images/logo/logo-light-240.avif 240w
-                      "
-                      sizes="(min-width: 1280px) 100px, 120px" />
-                    <source
-                      type="image/webp"
-                      srcset="
-                        images/logo/logo-light-100.webp 100w,
-                        images/logo/logo-light-120.webp 120w,
-                        images/logo/logo-light-200.webp 200w,
-                        images/logo/logo-light-240.webp 240w
-                      "
-                      sizes="(min-width: 1280px) 100px, 120px" />
-                    <img
-                      loading="eager"
-                      decoding="async"
-                      src="images/logo/logo-light-100.png"
-                      alt="Логотип компании Art5"
-                      class="lg:size-20 xl:size-25 size-30"
-                      width="240"
-                      height="240"
-                      srcset="
-                        images/logo/logo-light-100.png 100w,
-                        images/logo/logo-light-120.png 120w,
-                        images/logo/logo-light-200.png 200w,
-                        images/logo/logo-light-240.png 240w
-                      "
-                      sizes="(min-width: 1280px) 100px, 120px"
-                  /></picture>
+                  <img
+                    src="images/logo/logo-light.svg"
+                    alt="Логотип компании Art5"
+                    class="lg:size-20 xl:size-25 size-30"
+                    loading="eager"
+                    fetchpriority="high"
+                    width="120"
+                    height="120"
+                  />
                 </a>
                 <ul class="lg:block flex flex-col items-center">
                   <li>
@@ -551,9 +482,7 @@
                     </span>
                   </li>
                   <li class="mt-1">
-                    <span class="text-xl lg:text-lg xl:text-xl font-semibold"
-                      >Харківської міської ради</span
-                    >
+                    <span class="text-xl lg:text-lg xl:text-xl font-semibold">Харківської міської ради</span>
                   </li>
                 </ul>
               </div>
@@ -567,12 +496,7 @@
   }"
             >
               <li class="contents">
-                <a
-                  href="#"
-                  class="font-semibold text-rose-500 whitespace-nowrap"
-                >
-                  Головна
-                </a>
+                <a href="#" class="font-semibold text-rose-500 whitespace-nowrap"> Головна </a>
               </li>
               <li class="contents">
                 <div class="expand-hover-area group relative z-2">
@@ -598,32 +522,16 @@
                     class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-t-2 border-solid whitespace-nowrap transition-opacity duration-200 group-hover:block group-hover:opacity-100"
                   >
                     <li>
-                      <a
-                        href="#"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
-                        >Історія школи</a
-                      >
+                      <a href="#" class="px-6 py-2 hover:text-rose-500 block transition-colors">Історія школи</a>
                     </li>
                     <li>
-                      <a
-                        href="#"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
-                        >Проєктна діяльність</a
-                      >
+                      <a href="#" class="px-6 py-2 hover:text-rose-500 block transition-colors">Проєктна діяльність</a>
                     </li>
                     <li>
-                      <a
-                        href="#"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
-                        >Символіка школи</a
-                      >
+                      <a href="#" class="px-6 py-2 hover:text-rose-500 block transition-colors">Символіка школи</a>
                     </li>
                     <li>
-                      <a
-                        href="gallery.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
-                        >Галерея</a
-                      >
+                      <a href="gallery.html" class="px-6 py-2 hover:text-rose-500 block transition-colors">Галерея</a>
                     </li>
                   </ul>
                 </div>
@@ -652,16 +560,12 @@
                     class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-solid whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:block group-hover:opacity-100"
                   >
                     <li>
-                      <a
-                        href="music-department.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
+                      <a href="music-department.html" class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >Музичне відділення</a
                       >
                     </li>
                     <li>
-                      <ul
-                        class="pl-3 lg:gap-1 lg:pl-6 lg:font-semibold flex flex-col"
-                      >
+                      <ul class="pl-3 lg:gap-1 lg:pl-6 lg:font-semibold flex flex-col">
                         <li>
                           <a
                             href="piano-violin-department.html"
@@ -693,9 +597,7 @@
                       </ul>
                     </li>
                     <li>
-                      <a
-                        href="painting-department.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
+                      <a href="painting-department.html" class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >Художнє відділення</a
                       >
                     </li>
@@ -714,30 +616,22 @@
                       >
                     </li>
                     <li>
-                      <a
-                        href="inclusion-department.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
+                      <a href="inclusion-department.html" class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >Інклюзивна початкова мистецька освіта</a
                       >
                     </li>
                     <li>
-                      <a
-                        href="psychology-department.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
+                      <a href="psychology-department.html" class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >Психолог</a
                       >
                     </li>
                     <li>
-                      <a
-                        href="online-department.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
+                      <a href="online-department.html" class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >Дистанційне відділення</a
                       >
                     </li>
                     <li>
-                      <a
-                        href="library-department.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
+                      <a href="library-department.html" class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >Бібліотека</a
                       >
                     </li>
@@ -768,16 +662,12 @@
                     class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-solid whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:block group-hover:opacity-100"
                   >
                     <li>
-                      <a
-                        href="music-department.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
+                      <a href="music-department.html" class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >Кравчук Оксана Вікторівна</a
                       >
                     </li>
                     <li>
-                      <a
-                        href="painting-department.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
+                      <a href="painting-department.html" class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >Новікова Тетяна Сергіївна</a
                       >
                     </li>
@@ -796,9 +686,7 @@
                       >
                     </li>
                     <li>
-                      <a
-                        href="inclusion-department.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
+                      <a href="inclusion-department.html" class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >Бубнова Олена Володимирівна</a
                       >
                     </li>
@@ -829,16 +717,12 @@
                     class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-solid whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:block group-hover:opacity-100"
                   >
                     <li>
-                      <a
-                        href="music-department.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
+                      <a href="music-department.html" class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >Музичне відділення</a
                       >
                     </li>
                     <li>
-                      <ul
-                        class="pl-3 lg:gap-1 lg:pl-6 lg:font-semibold flex flex-col"
-                      >
+                      <ul class="pl-3 lg:gap-1 lg:pl-6 lg:font-semibold flex flex-col">
                         <li>
                           <a
                             href="piano-violin-department.html"
@@ -870,9 +754,7 @@
                       </ul>
                     </li>
                     <li>
-                      <a
-                        href="painting-department.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
+                      <a href="painting-department.html" class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >Художнє відділення</a
                       >
                     </li>
@@ -891,23 +773,17 @@
                       >
                     </li>
                     <li>
-                      <a
-                        href="inclusion-department.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
+                      <a href="inclusion-department.html" class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >Інклюзивна початкова мистецька освіта</a
                       >
                     </li>
                     <li>
-                      <a
-                        href="psychology-department.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
+                      <a href="psychology-department.html" class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >Психолог</a
                       >
                     </li>
                     <li>
-                      <a
-                        href="library-department.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
+                      <a href="library-department.html" class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >Бібліотека</a
                       >
                     </li>
@@ -939,16 +815,12 @@
                     class="mt-2 rounded-xl border-rose-500 bg-white font-semibold shadow-lg absolute top-full left-1/2 z-50 hidden w-max -translate-x-1/2 border-2 border-solid whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:block group-hover:opacity-100"
                   >
                     <li>
-                      <a
-                        href="music-department.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
+                      <a href="music-department.html" class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >Викладачам</a
                       >
                     </li>
                     <li>
-                      <a
-                        href="painting-department.html"
-                        class="px-6 py-2 hover:text-rose-500 block transition-colors"
+                      <a href="painting-department.html" class="px-6 py-2 hover:text-rose-500 block transition-colors"
                         >Батькам</a
                       >
                     </li>
@@ -963,25 +835,13 @@
                 </div>
               </li>
               <li class="contents">
-                <a
-                  href="#"
-                  class="font-semibold hover:text-rose-500 whitespace-nowrap transition-colors"
-                  >Новини</a
-                >
+                <a href="#" class="font-semibold hover:text-rose-500 whitespace-nowrap transition-colors">Новини</a>
               </li>
               <li class="contents">
-                <a
-                  href="#"
-                  class="font-semibold hover:text-rose-500 whitespace-nowrap transition-colors"
-                  >Події</a
-                >
+                <a href="#" class="font-semibold hover:text-rose-500 whitespace-nowrap transition-colors">Події</a>
               </li>
               <li class="contents">
-                <a
-                  href="#"
-                  class="font-semibold hover:text-rose-500 whitespace-nowrap transition-colors"
-                  >Контакти</a
-                >
+                <a href="#" class="font-semibold hover:text-rose-500 whitespace-nowrap transition-colors">Контакти</a>
               </li>
             </ul>
           </nav>
@@ -1032,355 +892,187 @@
                   stroke="currentColor"
                   class="size-12"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18 18 6M6 6l12 12"
-                  ></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
                 </svg>
               </button>
               <ul class="flex flex-col">
                 <li>
-                  <a
-                    href="index.html"
-                    class="py-2 text-xl font-bold text-teal-600 block"
-                  >
-                    Головна
-                  </a>
+                  <a href="index.html" class="py-2 text-xl font-bold text-teal-600 block"> Головна </a>
                 </li>
                 <li>
-                  <a href="about.html" class="py-2 text-xl font-bold block">
-                    Про школу
-                  </a>
+                  <a href="about.html" class="py-2 text-xl font-bold block"> Про школу </a>
                   <ul class="pl-3">
                     <li>
-                      <a href="#" class="py-2 text-xl font-semibold block">
-                        Історія школи
-                      </a>
+                      <a href="#" class="py-2 text-xl font-semibold block"> Історія школи </a>
                     </li>
                     <li>
-                      <a href="#" class="py-2 text-xl font-semibold block">
-                        Проєктна діяльність
-                      </a>
+                      <a href="#" class="py-2 text-xl font-semibold block"> Проєктна діяльність </a>
                     </li>
                     <li>
-                      <a href="#" class="py-2 text-xl font-semibold block">
-                        Символіка школи
-                      </a>
+                      <a href="#" class="py-2 text-xl font-semibold block"> Символіка школи </a>
                     </li>
                     <li>
-                      <a
-                        href="gallery.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
-                        Галерея
-                      </a>
+                      <a href="gallery.html" class="py-2 text-xl font-semibold block"> Галерея </a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a
-                    href="departments.html"
-                    class="py-2 text-xl font-bold block"
-                  >
-                    Відділення
-                  </a>
+                  <a href="departments.html" class="py-2 text-xl font-bold block"> Відділення </a>
                   <ul class="pl-3">
                     <li>
-                      <a
-                        href="music-department.html"
-                        class="py-2 text-xl font-bold block"
-                      >
-                        Музичне відділення
-                      </a>
+                      <a href="music-department.html" class="py-2 text-xl font-bold block"> Музичне відділення </a>
                       <ul class="pl-5">
                         <li>
-                          <a
-                            href="piano-violin-department.html"
-                            class="py-2 text-xl font-semibold block"
-                          >
+                          <a href="piano-violin-department.html" class="py-2 text-xl font-semibold block">
                             Фортепіанно-струнний відділ
                           </a>
                         </li>
                         <li>
-                          <a
-                            href="folk-spiritual-department.html"
-                            class="py-2 text-xl font-semibold block"
-                          >
+                          <a href="folk-spiritual-department.html" class="py-2 text-xl font-semibold block">
                             Народно-духовий відділ
                           </a>
                         </li>
                         <li>
-                          <a
-                            href="vocal-choral-department.html"
-                            class="py-2 text-xl font-semibold block"
-                          >
+                          <a href="vocal-choral-department.html" class="py-2 text-xl font-semibold block">
                             Вокально-хоровий відділ
                           </a>
                         </li>
                         <li>
-                          <a
-                            href="music-theory-department.html"
-                            class="py-2 text-xl font-semibold block"
-                          >
+                          <a href="music-theory-department.html" class="py-2 text-xl font-semibold block">
                             Музично-теоретичний відділ
                           </a>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <a
-                        href="painting-department.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
+                      <a href="painting-department.html" class="py-2 text-xl font-semibold block">
                         Художнє відділення
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="theater-choreography-department.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
+                      <a href="theater-choreography-department.html" class="py-2 text-xl font-semibold block">
                         Театрально-хореографічне відділення
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="additional-services-department.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
+                      <a href="additional-services-department.html" class="py-2 text-xl font-semibold block">
                         Додаткові освітні платні послуги
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="inclusion-department.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
+                      <a href="inclusion-department.html" class="py-2 text-xl font-semibold block">
                         Інклюзивна початкова мистецька освіта
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="psychology-department.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
-                        Психолог
-                      </a>
+                      <a href="psychology-department.html" class="py-2 text-xl font-semibold block"> Психолог </a>
                     </li>
                     <li>
-                      <a
-                        href="online-department.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
+                      <a href="online-department.html" class="py-2 text-xl font-semibold block">
                         Дистанційне відділення
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="library-department.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
-                        Бібліотека
-                      </a>
+                      <a href="library-department.html" class="py-2 text-xl font-semibold block"> Бібліотека </a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a
-                    href="administration.html"
-                    class="py-2 text-xl font-bold block"
-                  >
-                    Адміністрація
-                  </a>
+                  <a href="administration.html" class="py-2 text-xl font-bold block"> Адміністрація </a>
                   <ul class="pl-3">
                     <li>
-                      <a
-                        href="profile.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
-                        Кравчук Оксана Вікторівна
-                      </a>
+                      <a href="profile.html" class="py-2 text-xl font-semibold block"> Кравчук Оксана Вікторівна </a>
                     </li>
                     <li>
-                      <a
-                        href="profile.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
-                        Новікова Тетяна Сергіївна
-                      </a>
+                      <a href="profile.html" class="py-2 text-xl font-semibold block"> Новікова Тетяна Сергіївна </a>
                     </li>
                     <li>
-                      <a
-                        href="profile.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
+                      <a href="profile.html" class="py-2 text-xl font-semibold block">
                         Вініченко Марина Володимирівна
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="profile.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
-                        Шугай Алевтина Олександрівна
-                      </a>
+                      <a href="profile.html" class="py-2 text-xl font-semibold block"> Шугай Алевтина Олександрівна </a>
                     </li>
                     <li>
-                      <a
-                        href="profile.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
-                        Бубнова Олена Володимирівна
-                      </a>
+                      <a href="profile.html" class="py-2 text-xl font-semibold block"> Бубнова Олена Володимирівна </a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a href="teachers.html" class="py-2 text-xl font-bold block">
-                    Викладачі
-                  </a>
+                  <a href="teachers.html" class="py-2 text-xl font-bold block"> Викладачі </a>
                   <ul class="pl-3">
                     <li>
-                      <a
-                        href="teachers-music-department.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
+                      <a href="teachers-music-department.html" class="py-2 text-xl font-semibold block">
                         Музичне відділення
                       </a>
                       <ul class="pl-5">
                         <li>
-                          <a
-                            href="teachers-list.html"
-                            class="py-2 text-xl font-semibold block"
-                          >
+                          <a href="teachers-list.html" class="py-2 text-xl font-semibold block">
                             Фортепіанно-струнний відділ
                           </a>
                         </li>
                         <li>
-                          <a
-                            href="teachers-list.html"
-                            class="py-2 text-xl font-semibold block"
-                          >
+                          <a href="teachers-list.html" class="py-2 text-xl font-semibold block">
                             Народно-духовий відділ
                           </a>
                         </li>
                         <li>
-                          <a
-                            href="teachers-list.html"
-                            class="py-2 text-xl font-semibold block"
-                          >
+                          <a href="teachers-list.html" class="py-2 text-xl font-semibold block">
                             Вокально-хоровий відділ
                           </a>
                         </li>
                         <li>
-                          <a
-                            href="teachers-list.html"
-                            class="py-2 text-xl font-semibold block"
-                          >
+                          <a href="teachers-list.html" class="py-2 text-xl font-semibold block">
                             Музично-теоретичний відділ
                           </a>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <a
-                        href="teachers-list.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
-                        Художнє відділення
-                      </a>
+                      <a href="teachers-list.html" class="py-2 text-xl font-semibold block"> Художнє відділення </a>
                     </li>
                     <li>
-                      <a
-                        href="teachers-list.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
-                        Театральний клас
-                      </a>
+                      <a href="teachers-list.html" class="py-2 text-xl font-semibold block"> Театральний клас </a>
                     </li>
                     <li>
-                      <a
-                        href="teachers-list.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
-                        Хореографічний клас
-                      </a>
+                      <a href="teachers-list.html" class="py-2 text-xl font-semibold block"> Хореографічний клас </a>
                     </li>
                     <li>
-                      <a
-                        href="teachers-list.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
+                      <a href="teachers-list.html" class="py-2 text-xl font-semibold block">
                         Інклюзивна початкова мистецька освіта
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="teachers-list.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
-                        Психолог
-                      </a>
+                      <a href="teachers-list.html" class="py-2 text-xl font-semibold block"> Психолог </a>
                     </li>
                     <li>
-                      <a
-                        href="teachers-list.html"
-                        class="py-2 text-xl font-semibold block"
-                      >
-                        Бібліотека
-                      </a>
+                      <a href="teachers-list.html" class="py-2 text-xl font-semibold block"> Бібліотека </a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a
-                    href="useful-information.html"
-                    class="py-2 text-xl font-bold block"
-                  >
-                    Корисна інформація
-                  </a>
+                  <a href="useful-information.html" class="py-2 text-xl font-bold block"> Корисна інформація </a>
                   <ul class="pl-3">
                     <li>
-                      <a href="#" class="py-2 text-xl font-semibold block">
-                        Викладачам
-                      </a>
+                      <a href="#" class="py-2 text-xl font-semibold block"> Викладачам </a>
                     </li>
                     <li>
-                      <a href="#" class="py-2 text-xl font-semibold block">
-                        Батькам
-                      </a>
+                      <a href="#" class="py-2 text-xl font-semibold block"> Батькам </a>
                     </li>
                     <li>
-                      <a href="#" class="py-2 text-xl font-semibold block">
-                        Нормативна база
-                      </a>
+                      <a href="#" class="py-2 text-xl font-semibold block"> Нормативна база </a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a
-                    href="news-blog.html"
-                    class="py-2 text-xl font-semibold block"
-                  >
-                    Новини
-                  </a>
+                  <a href="news-blog.html" class="py-2 text-xl font-semibold block"> Новини </a>
                 </li>
                 <li>
-                  <a
-                    href="events-blog.html"
-                    class="py-2 text-xl font-semibold block"
-                  >
-                    Події
-                  </a>
+                  <a href="events-blog.html" class="py-2 text-xl font-semibold block"> Події </a>
                 </li>
                 <li>
-                  <a
-                    href="contact-us.html"
-                    class="py-2 text-xl font-semibold block"
-                  >
-                    Контакти
-                  </a>
+                  <a href="contact-us.html" class="py-2 text-xl font-semibold block"> Контакти </a>
                 </li>
               </ul>
             </nav>
@@ -1400,16 +1092,36 @@
           <div class="gap-4 grid grid-cols-2">
             <div class="relative z-1 flex flex-col items-center text-center">
               <picture
-                ><source type="image/avif" srcset="images/bird-173.avif 173w" />
-                <source type="image/webp" srcset="images/bird-173.webp 173w" />
+                ><source
+                  type="image/avif"
+                  srcset="
+                    images/bird-80.avif   80w,
+                    images/bird-100.avif 100w,
+                    images/bird-120.avif 120w,
+                    images/bird-160.avif 160w
+                  " />
+                <source
+                  type="image/webp"
+                  srcset="
+                    images/bird-80.webp   80w,
+                    images/bird-100.webp 100w,
+                    images/bird-120.webp 120w,
+                    images/bird-160.webp 160w
+                  " />
                 <img
                   loading="lazy"
                   decoding="async"
-                  src="images/bird-173.png"
+                  src="images/bird-80.png"
                   class="mb-4"
                   alt="bird"
-                  width="173"
-                  height="147"
+                  width="160"
+                  height="135"
+                  srcset="
+                    images/bird-80.png   80w,
+                    images/bird-100.png 100w,
+                    images/bird-120.png 120w,
+                    images/bird-160.png 160w
+                  "
               /></picture>
               <h1 class="max-w-120 mb-4 text-6xl font-black leading-[1.04]">
                 A lifetime of
@@ -1417,8 +1129,8 @@
                 starts here
               </h1>
               <p class="max-w-131 mb-4 mx-auto">
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua."
               </p>
               <a
                 href="#"
@@ -1430,167 +1142,334 @@
                 ><source
                   type="image/avif"
                   srcset="
+                    images/circle-80.avif   80w,
+                    images/circle-100.avif 100w,
+                    images/circle-120.avif 120w,
+                    images/circle-160.avif 160w,
+                    images/circle-200.avif 200w,
+                    images/circle-240.avif 240w,
                     images/circle-320.avif 320w,
                     images/circle-480.avif 480w,
                     images/circle-640.avif 640w,
-                    images/circle-768.avif 768w,
-                    images/circle-900.avif 900w
-                  "
-                  sizes="auto" />
+                    images/circle-768.avif 768w
+                  " />
                 <source
                   type="image/webp"
                   srcset="
+                    images/circle-80.webp   80w,
+                    images/circle-100.webp 100w,
+                    images/circle-120.webp 120w,
+                    images/circle-160.webp 160w,
+                    images/circle-200.webp 200w,
+                    images/circle-240.webp 240w,
                     images/circle-320.webp 320w,
                     images/circle-480.webp 480w,
                     images/circle-640.webp 640w,
-                    images/circle-768.webp 768w,
-                    images/circle-900.webp 900w
-                  "
-                  sizes="auto" />
+                    images/circle-768.webp 768w
+                  " />
                 <img
                   loading="lazy"
                   decoding="async"
-                  src="images/circle-320.png"
+                  src="images/circle-80.png"
                   class="inset-x-0 top-4 absolute -z-1"
                   alt="decor circle"
-                  width="900"
-                  height="646"
+                  width="768"
+                  height="551"
                   srcset="
+                    images/circle-80.png   80w,
+                    images/circle-100.png 100w,
+                    images/circle-120.png 120w,
+                    images/circle-160.png 160w,
+                    images/circle-200.png 200w,
+                    images/circle-240.png 240w,
                     images/circle-320.png 320w,
                     images/circle-480.png 480w,
                     images/circle-640.png 640w,
-                    images/circle-768.png 768w,
-                    images/circle-900.png 900w
+                    images/circle-768.png 768w
                   "
-                  sizes="auto"
               /></picture>
             </div>
             <div class="gap-4 grid grid-cols-2">
               <picture
-                ><source type="image/avif" srcset="images/kid1-300.avif 300w" />
-                <source type="image/webp" srcset="images/kid1-300.webp 300w" />
+                ><source
+                  type="image/avif"
+                  srcset="
+                    images/kid1-80.avif   80w,
+                    images/kid1-100.avif 100w,
+                    images/kid1-120.avif 120w,
+                    images/kid1-160.avif 160w,
+                    images/kid1-200.avif 200w,
+                    images/kid1-240.avif 240w
+                  " />
+                <source
+                  type="image/webp"
+                  srcset="
+                    images/kid1-80.webp   80w,
+                    images/kid1-100.webp 100w,
+                    images/kid1-120.webp 120w,
+                    images/kid1-160.webp 160w,
+                    images/kid1-200.webp 200w,
+                    images/kid1-240.webp 240w
+                  " />
                 <img
                   loading="lazy"
                   decoding="async"
-                  src="images/kid1-300.png"
+                  src="images/kid1-80.png"
                   class="parallax ease-out transition-transform duration-300"
                   style="transform: translate(4.67px, 11.23px)"
                   data-offset-x="4.67"
                   data-offset-y="11.23"
                   data-speed="10"
                   alt="kid 1"
-                  width="300"
-                  height="414"
+                  width="240"
+                  height="331"
+                  srcset="
+                    images/kid1-80.png   80w,
+                    images/kid1-100.png 100w,
+                    images/kid1-120.png 120w,
+                    images/kid1-160.png 160w,
+                    images/kid1-200.png 200w,
+                    images/kid1-240.png 240w
+                  "
               /></picture>
               <picture
                 ><source
                   type="image/avif"
-                  srcset="images/kid2-320.avif 320w, images/kid2-370.avif 370w"
-                  sizes="auto" />
+                  srcset="
+                    images/kid2-80.avif   80w,
+                    images/kid2-100.avif 100w,
+                    images/kid2-120.avif 120w,
+                    images/kid2-160.avif 160w,
+                    images/kid2-200.avif 200w,
+                    images/kid2-240.avif 240w,
+                    images/kid2-320.avif 320w
+                  " />
                 <source
                   type="image/webp"
-                  srcset="images/kid2-320.webp 320w, images/kid2-370.webp 370w"
-                  sizes="auto" />
+                  srcset="
+                    images/kid2-80.webp   80w,
+                    images/kid2-100.webp 100w,
+                    images/kid2-120.webp 120w,
+                    images/kid2-160.webp 160w,
+                    images/kid2-200.webp 200w,
+                    images/kid2-240.webp 240w,
+                    images/kid2-320.webp 320w
+                  " />
                 <img
                   loading="lazy"
                   decoding="async"
-                  src="images/kid2-320.png"
+                  src="images/kid2-80.png"
                   class="parallax ease-out transition-transform duration-300"
                   style="transform: translate(5.34px, 21.46px)"
                   data-offset-x="5.34"
                   data-offset-y="21.46"
                   data-speed="12"
                   alt="kid 2"
-                  width="370"
-                  height="415"
-                  srcset="images/kid2-320.png 320w, images/kid2-370.png 370w"
-                  sizes="auto"
+                  width="320"
+                  height="358"
+                  srcset="
+                    images/kid2-80.png   80w,
+                    images/kid2-100.png 100w,
+                    images/kid2-120.png 120w,
+                    images/kid2-160.png 160w,
+                    images/kid2-200.png 200w,
+                    images/kid2-240.png 240w,
+                    images/kid2-320.png 320w
+                  "
               /></picture>
               <picture
                 ><source
                   type="image/avif"
-                  srcset="images/kid3-320.avif 320w, images/kid3-384.avif 384w"
-                  sizes="auto" />
+                  srcset="
+                    images/kid3-80.avif   80w,
+                    images/kid3-100.avif 100w,
+                    images/kid3-120.avif 120w,
+                    images/kid3-160.avif 160w,
+                    images/kid3-200.avif 200w,
+                    images/kid3-240.avif 240w,
+                    images/kid3-320.avif 320w
+                  " />
                 <source
                   type="image/webp"
-                  srcset="images/kid3-320.webp 320w, images/kid3-384.webp 384w"
-                  sizes="auto" />
+                  srcset="
+                    images/kid3-80.webp   80w,
+                    images/kid3-100.webp 100w,
+                    images/kid3-120.webp 120w,
+                    images/kid3-160.webp 160w,
+                    images/kid3-200.webp 200w,
+                    images/kid3-240.webp 240w,
+                    images/kid3-320.webp 320w
+                  " />
                 <img
                   loading="lazy"
                   decoding="async"
-                  src="images/kid3-320.png"
+                  src="images/kid3-80.png"
                   class="parallax ease-out transition-transform duration-300"
                   style="transform: translate(7.99px, 31.69px)"
                   data-offset-x="7.99"
                   data-offset-y="31.69"
                   data-speed="8"
                   alt="kid 3"
-                  width="384"
-                  height="353"
-                  srcset="images/kid3-320.png 320w, images/kid3-384.png 384w"
-                  sizes="auto"
+                  width="320"
+                  height="294"
+                  srcset="
+                    images/kid3-80.png   80w,
+                    images/kid3-100.png 100w,
+                    images/kid3-120.png 120w,
+                    images/kid3-160.png 160w,
+                    images/kid3-200.png 200w,
+                    images/kid3-240.png 240w,
+                    images/kid3-320.png 320w
+                  "
               /></picture>
               <picture
                 ><source
                   type="image/avif"
-                  srcset="images/kid4-320.avif 320w, images/kid4-330.avif 330w"
-                  sizes="auto" />
+                  srcset="
+                    images/kid4-80.avif   80w,
+                    images/kid4-100.avif 100w,
+                    images/kid4-120.avif 120w,
+                    images/kid4-160.avif 160w,
+                    images/kid4-200.avif 200w,
+                    images/kid4-240.avif 240w,
+                    images/kid4-320.avif 320w
+                  " />
                 <source
                   type="image/webp"
-                  srcset="images/kid4-320.webp 320w, images/kid4-330.webp 330w"
-                  sizes="auto" />
+                  srcset="
+                    images/kid4-80.webp   80w,
+                    images/kid4-100.webp 100w,
+                    images/kid4-120.webp 120w,
+                    images/kid4-160.webp 160w,
+                    images/kid4-200.webp 200w,
+                    images/kid4-240.webp 240w,
+                    images/kid4-320.webp 320w
+                  " />
                 <img
                   loading="lazy"
                   decoding="async"
-                  src="images/kid4-320.png"
+                  src="images/kid4-80.png"
                   class="parallax ease-out transition-transform duration-300"
                   style="transform: translate(16.32px, 42px)"
                   data-offset-x="16.32"
                   data-offset-y="42"
                   data-speed="15"
                   alt="kid 4"
-                  width="330"
-                  height="324"
-                  srcset="images/kid4-320.png 320w, images/kid4-330.png 330w"
-                  sizes="auto"
+                  width="320"
+                  height="314"
+                  srcset="
+                    images/kid4-80.png   80w,
+                    images/kid4-100.png 100w,
+                    images/kid4-120.png 120w,
+                    images/kid4-160.png 160w,
+                    images/kid4-200.png 200w,
+                    images/kid4-240.png 240w,
+                    images/kid4-320.png 320w
+                  "
               /></picture>
             </div>
           </div>
           <picture
-            ><source type="image/avif" srcset="images/shape1-292.avif 292w" />
-            <source type="image/webp" srcset="images/shape1-292.webp 292w" />
+            ><source
+              type="image/avif"
+              srcset="
+                images/shape1-80.avif   80w,
+                images/shape1-100.avif 100w,
+                images/shape1-120.avif 120w,
+                images/shape1-160.avif 160w,
+                images/shape1-200.avif 200w,
+                images/shape1-240.avif 240w
+              " />
+            <source
+              type="image/webp"
+              srcset="
+                images/shape1-80.webp   80w,
+                images/shape1-100.webp 100w,
+                images/shape1-120.webp 120w,
+                images/shape1-160.webp 160w,
+                images/shape1-200.webp 200w,
+                images/shape1-240.webp 240w
+              " />
             <img
               loading="lazy"
               decoding="async"
-              src="images/shape1-292.png"
+              src="images/shape1-80.png"
               class="left-0 top-0 absolute -z-2"
               alt="hero shape 1"
-              width="292"
-              height="141"
+              width="240"
+              height="115"
+              srcset="
+                images/shape1-80.png   80w,
+                images/shape1-100.png 100w,
+                images/shape1-120.png 120w,
+                images/shape1-160.png 160w,
+                images/shape1-200.png 200w,
+                images/shape1-240.png 240w
+              "
           /></picture>
           <picture
-            ><source type="image/avif" srcset="images/shape2-184.avif 184w" />
-            <source type="image/webp" srcset="images/shape2-184.webp 184w" />
+            ><source
+              type="image/avif"
+              srcset="
+                images/shape2-80.avif   80w,
+                images/shape2-100.avif 100w,
+                images/shape2-120.avif 120w,
+                images/shape2-160.avif 160w
+              " />
+            <source
+              type="image/webp"
+              srcset="
+                images/shape2-80.webp   80w,
+                images/shape2-100.webp 100w,
+                images/shape2-120.webp 120w,
+                images/shape2-160.webp 160w
+              " />
             <img
               loading="lazy"
               decoding="async"
-              src="images/shape2-184.png"
+              src="images/shape2-80.png"
               class="right-0 top-0 absolute -z-2"
               alt="hero shape 2"
-              width="184"
-              height="215"
+              width="160"
+              height="186"
+              srcset="
+                images/shape2-80.png   80w,
+                images/shape2-100.png 100w,
+                images/shape2-120.png 120w,
+                images/shape2-160.png 160w
+              "
           /></picture>
           <picture
-            ><source type="image/avif" srcset="images/shape3-199.avif 199w" />
-            <source type="image/webp" srcset="images/shape3-199.webp 199w" />
+            ><source
+              type="image/avif"
+              srcset="
+                images/shape3-80.avif   80w,
+                images/shape3-100.avif 100w,
+                images/shape3-120.avif 120w,
+                images/shape3-160.avif 160w
+              " />
+            <source
+              type="image/webp"
+              srcset="
+                images/shape3-80.webp   80w,
+                images/shape3-100.webp 100w,
+                images/shape3-120.webp 120w,
+                images/shape3-160.webp 160w
+              " />
             <img
               loading="lazy"
               decoding="async"
-              src="images/shape3-199.png"
+              src="images/shape3-80.png"
               class="animate-movebounce -bottom-15 left-0 absolute"
               alt="hero shape 3"
-              width="199"
-              height="260"
+              width="160"
+              height="209"
+              srcset="
+                images/shape3-80.png   80w,
+                images/shape3-100.png 100w,
+                images/shape3-120.png 120w,
+                images/shape3-160.png 160w
+              "
           /></picture>
           <picture
             ><source type="image/avif" srcset="images/shape4-59.avif 59w" />
@@ -1617,16 +1496,17 @@
               height="66"
           /></picture>
           <picture
-            ><source type="image/avif" srcset="images/shape6-110.avif 110w" />
-            <source type="image/webp" srcset="images/shape6-110.webp 110w" />
+            ><source type="image/avif" srcset="images/shape6-80.avif 80w, images/shape6-100.avif 100w" />
+            <source type="image/webp" srcset="images/shape6-80.webp 80w, images/shape6-100.webp 100w" />
             <img
               loading="lazy"
               decoding="async"
-              src="images/shape6-110.png"
+              src="images/shape6-80.png"
               class="animate-moveleftbounce absolute bottom-[25%] left-[50%] -z-1"
               alt="hero shape 6"
-              width="110"
-              height="109"
+              width="100"
+              height="99"
+              srcset="images/shape6-80.png 80w, images/shape6-100.png 100w"
           /></picture>
         </div>
       </section>
