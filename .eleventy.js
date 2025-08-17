@@ -6,19 +6,19 @@ const path = require('path');
 function generateSizesFromTailwind(classList) {
   if (!classList) return '100vw';
 
-  // Tailwind CSS v4 breakpoints
+  // Tailwind CSS v4 breakpoints that match our customPictureFormat breakpoints
   const breakpoints = {
-    sm: 640,
-    md: 768,
-    lg: 1024,
-    xl: 1280,
+    sm: 640, // matches minWidth: 640
+    md: 768, // matches minWidth: 768
+    lg: 1024, // matches minWidth: 1024
+    xl: 1280, // matches minWidth: 1280
     '2xl': 1536,
   };
 
-  // Parse sizes from Tailwind classes
+  // Parse sizes from Tailwind classes - including all size variants
   const sizePattern =
     /(?:^|\s)((?:sm|md|lg|xl|2xl):)?(?:w-(\d+)|h-(\d+)|size-(\d+)|max-w-(\w+))/g;
-  const sizes = [];
+  const breakpointSizes = new Map();
   let match;
   let defaultSize = null;
 
@@ -54,26 +54,32 @@ function generateSizesFromTailwind(classList) {
     }
 
     if (breakpoint && breakpoints[breakpoint] && pixelValue) {
-      sizes.push({
-        breakpoint: breakpoints[breakpoint],
-        size: `${pixelValue}px`,
-        query: `(min-width: ${breakpoints[breakpoint]}px) ${pixelValue}px`,
-      });
+      breakpointSizes.set(breakpoints[breakpoint], pixelValue);
     } else if (!breakpoint && pixelValue) {
-      defaultSize = `${pixelValue}px`;
+      defaultSize = pixelValue;
     }
   }
 
-  // Sort by descending breakpoints
-  sizes.sort((a, b) => b.breakpoint - a.breakpoint);
+  // Build sizes string matching customPictureFormat breakpoints order
+  const sizeQueries = [];
 
-  // Build final sizes string
-  const sizeQueries = sizes.map((s) => s.query);
-  if (defaultSize) {
-    sizeQueries.push(defaultSize);
+  // Sort by descending breakpoints to match media query logic
+  const sortedBreakpoints = Array.from(breakpointSizes.entries()).sort(
+    (a, b) => b[0] - a[0],
+  );
+
+  for (const [bp, size] of sortedBreakpoints) {
+    sizeQueries.push(`(min-width: ${bp}px) ${size}px`);
   }
 
-  return sizeQueries.length > 0 ? sizeQueries.join(', ') : '100vw';
+  // Add default size (or use 100vw if none specified)
+  if (defaultSize) {
+    sizeQueries.push(`${defaultSize}px`);
+  } else {
+    sizeQueries.push('100vw');
+  }
+
+  return sizeQueries.join(', ');
 }
 
 module.exports = function (eleventyConfig) {
@@ -239,16 +245,15 @@ module.exports = function (eleventyConfig) {
           }
 
           const allBreakpoints = [
-            { minWidth: 1280, width: 2560 },
-            { minWidth: 1024, width: 1920 },
-            { minWidth: 768, width: 1366 },
-            { minWidth: 640, width: 1024 },
-            { minWidth: 360, width: 768 },
-            { minWidth: null, width: 480 },
+            { minWidth: 1280, width: 2560 }, // xl: breakpoint
+            { minWidth: 1024, width: 1920 }, // lg: breakpoint
+            { minWidth: 768, width: 1366 }, // md: breakpoint
+            { minWidth: 640, width: 1024 }, // sm: breakpoint
+            { minWidth: null, width: 480 }, // default (mobile)
           ];
 
           // Check which files actually exist by looking at different possible widths
-          const possibleWidths = [480, 768, 1024, 1366, 1920, 2560];
+          const possibleWidths = [480, 1024, 1366, 1920, 2560];
           const existingWidths = [];
 
           // Check each possible width
