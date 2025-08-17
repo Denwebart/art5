@@ -4,3 +4,4 @@ node_modules
 .env
 autocommit.sh
 changes.txt
+smart-commit.sh
