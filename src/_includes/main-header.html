@@ -343,16 +343,37 @@
         >
           <div class="gap-3 lg:flex-row flex flex-col items-center">
             <a href="#">
-              <img
-                src="images/logo/logo-light.svg"
-                alt="Логотип компании Art5"
-                class="lg:size-20 xl:size-25 size-30"
-                loading="eager"
-                fetchpriority="high"
-                width="120"
-                height="120"
-                eleventy:ignore
-              />
+              <picture>
+                <source
+                  srcset="
+                    images/logo/logo_original-light_96.avif   96w,
+                    images/logo/logo_original-light_128.avif 128w,
+                    images/logo/logo_original-light_192.avif 192w,
+                    images/logo/logo_original-light_256.avif 256w,
+                    images/logo/logo_original-light_384.avif 384w
+                  "
+                  sizes="(max-width: 768px) 96px, 128px"
+                  type="image/avif"
+                />
+                <source
+                  srcset="
+                    images/logo/logo_original-light_96.webp   96w,
+                    images/logo/logo_original-light_128.webp 128w,
+                    images/logo/logo_original-light_192.webp 192w,
+                    images/logo/logo_original-light_256.webp 256w,
+                    images/logo/logo_original-light_384.webp 384w
+                  "
+                  sizes="(max-width: 768px) 96px, 128px"
+                  type="image/webp"
+                />
+                <img
+                  src="images/logo/logo_original-light_256.png"
+                  alt="Дитяча школа мистецтв №5 Харківської міської ради"
+                  width="128"
+                  height="128"
+                  eleventy:ignore
+                />
+              </picture>
             </a>
             <ul class="lg:block flex flex-col items-center">
               <li>

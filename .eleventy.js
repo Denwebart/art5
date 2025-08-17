@@ -82,63 +82,56 @@ module.exports = function (eleventyConfig) {
     // Process HTML files
     extensions: 'html',
 
-    // Modern image formats by compression priority
+    // Generate AVIF, WebP and original formats
     formats: ['avif', 'webp', 'auto'],
 
-    // Enhanced widths including small sizes for crisp logos
-    widths: [
-      80, 100, 120, 160, 200, 240, 320, 480, 640, 768, 1024, 1280, 1536, 2048,
-    ],
+    // Widths optimized for mobile-first with Retina support
+    widths: [480, 768, 1024, 1366, 1920, 2560],
 
-    // Professional quality and compression settings
-    // В блоке transformOptions замените на:
+    // Optimized quality settings for all formats
     transformOptions: {
+      svgAllowUpscale: false,
       sharpOptions: {
         animated: true,
         stripMetadata: true,
-      },
-      sharpPngOptions: {
-        quality: (metadata, options) => {
-          // Максимальное качество для логотипов
-          return options.src.includes('/logo/') ? 95 : 90;
-        },
-        compressionLevel: 9,
-        palette: true,
-        force: false,
+        withoutEnlargement: true,
       },
       sharpJpegOptions: {
-        quality: (metadata, options) => {
-          return options.src.includes('/logo/') ? 98 : 95;
-        },
+        quality: 88,
         progressive: true,
         mozjpeg: true,
         force: false,
       },
       sharpWebpOptions: {
-        quality: (metadata, options) => {
-          // Для логотипов используем почти lossless качество
-          return options.src.includes('/logo/') ? 95 : 90;
-        },
+        quality: 82,
         effort: 6,
         force: false,
       },
       sharpAvifOptions: {
-        quality: (metadata, options) => {
-          return options.src.includes('/logo/') ? 90 : 85;
-        },
+        quality: 75,
         effort: 6,
         chromaSubsampling: '4:2:0',
         force: false,
       },
     },
 
-    // Automatic attributes for all images
+    // Custom function to filter widths based on original image size
+    widthsCallback: function (src, metadata) {
+      const originalWidth =
+        metadata.jpeg?.[0]?.width ||
+        metadata.png?.[0]?.width ||
+        metadata.webp?.[0]?.width;
+      if (!originalWidth) return [480, 768, 1024, 1366, 1920, 2560];
+
+      const possibleWidths = [480, 768, 1024, 1366, 1920, 2560];
+      return possibleWidths.filter((width) => width <= originalWidth);
+    },
+
+    // Default attributes
     defaultAttributes: {
       loading: 'lazy',
       decoding: 'async',
-      // Automatic sizes generation based on Tailwind classes
       sizes: function (metadata) {
-        // Get classList from img tag
         const imgElement = this;
         const classList = imgElement.getAttribute('class');
         return generateSizesFromTailwind(classList);
@@ -148,28 +141,252 @@ module.exports = function (eleventyConfig) {
     // Directory for processed images
     outputDir: path.join('_site', 'images'),
 
-    // URL path for images
+    // URL path for images (без ведущего слэша)
     urlPath: 'images/',
 
-    // Filename function preserving folder structure
+    // Custom filename function to match your template
     filenameFormat: (id, src, width, format) => {
-      // Get relative path to image
-      const relativePath = path.relative(__dirname, src);
-      // Get subdirectory path relative to src/images
-      const subDir = path.dirname(path.relative('src/images', relativePath));
-      // Get filename without extension
-      const name = path.basename(relativePath, path.extname(relativePath));
+      try {
+        const relativePath = path.relative(__dirname, src);
+        const subDir = path.dirname(path.relative('src/images', relativePath));
+        const name = path.basename(relativePath, path.extname(relativePath));
 
-      // Create new path with subdirectory
-      const newPath = path.join(subDir, `${name}-${width}.${format}`);
-      // Replace backslashes with forward slashes for web URLs
-      return newPath.replace(/\\/g, '/');
+        const filename = `${name}_${width}.${format}`;
+        const newPath = subDir !== '.' ? path.join(subDir, filename) : filename;
+
+        return newPath.replace(/\\/g, '/');
+      } catch (error) {
+        console.warn('Error in filename formatting:', error.message);
+        const name = path.basename(src, path.extname(src));
+        return `${name}_${width}.${format}`;
+      }
     },
 
-    // Additional performance settings
-    dryRun: false, // Disable dry run for production
-    statsOnly: false, // Generate files, not just statistics
+    dryRun: false,
+    statsOnly: false,
   });
+
+  // Custom transform to replace generated picture elements with our template
+  eleventyConfig.addTransform(
+    'customPictureFormat',
+    async function (content, outputPath) {
+      if (outputPath && outputPath.endsWith('.html')) {
+        const fs = require('fs');
+        const sharp = require('sharp');
+
+        // Создаем промисы для всех замен
+        const pictureMatches = [
+          ...content.matchAll(/<picture[^>]*>[\s\S]*?<\/picture>/g),
+        ];
+
+        for (const match of pictureMatches) {
+          const originalMatch = match[0];
+
+          // 🚫 Пропускаем если есть eleventy:ignore
+          if (originalMatch.includes('eleventy:ignore')) {
+            content = content.replace(
+              originalMatch,
+              originalMatch.replace(/\s*eleventy:ignore(="")?/g, ''),
+            );
+            continue;
+          }
+
+          // Extract img attributes from the original
+          const imgMatch = originalMatch.match(/<img[^>]*>/);
+          if (!imgMatch) continue;
+
+          const imgTag = imgMatch[0];
+
+          // Extract individual attributes
+          const srcMatch = imgTag.match(/src="([^"]+)"/);
+          const altMatch = imgTag.match(/alt="([^"]*)"/);
+          const classMatch = imgTag.match(/class="([^"]*)"/);
+          const loadingMatch = imgTag.match(/loading="([^"]*)"/);
+          const fetchpriorityMatch = imgTag.match(/fetchpriority="([^"]*)"/);
+          const decodingMatch = imgTag.match(/decoding="([^"]*)"/);
+
+          if (!srcMatch) continue;
+
+          const src = srcMatch[1];
+          const alt = altMatch ? altMatch[1] : '';
+          const className = classMatch ? classMatch[1] : '';
+          const loading = loadingMatch ? loadingMatch[1] : 'lazy';
+          const fetchpriority = fetchpriorityMatch ? fetchpriorityMatch[1] : '';
+          const decoding = decodingMatch ? decodingMatch[1] : 'async';
+
+          const srcWithoutLeadingSlash = src.startsWith('/')
+            ? src.substring(1)
+            : src;
+          const originalExt = path
+            .extname(srcWithoutLeadingSlash)
+            .toLowerCase();
+          const baseName = path
+            .basename(srcWithoutLeadingSlash, originalExt)
+            .replace(/_\d+$/, '');
+          const dirName = path.dirname(srcWithoutLeadingSlash);
+          const basePathPrefix = dirName !== '.' ? `${dirName}/` : '';
+
+          let fallbackFormat;
+          if (originalExt === '.png') {
+            fallbackFormat = 'png';
+          } else if (originalExt === '.jpg' || originalExt === '.jpeg') {
+            fallbackFormat = 'jpeg';
+          } else if (originalExt === '.gif') {
+            fallbackFormat = 'gif';
+          } else {
+            // Skip processing for unsupported formats
+            continue;
+          }
+
+          const allBreakpoints = [
+            { minWidth: 1280, width: 2560 },
+            { minWidth: 1024, width: 1920 },
+            { minWidth: 768, width: 1366 },
+            { minWidth: 640, width: 1024 },
+            { minWidth: 360, width: 768 },
+            { minWidth: null, width: 480 },
+          ];
+
+          // Check which files actually exist by looking at different possible widths
+          const possibleWidths = [480, 768, 1024, 1366, 1920, 2560];
+          const existingWidths = [];
+
+          // Check each possible width
+          for (const width of possibleWidths) {
+            const testFile = path.join(
+              '_site',
+              'images',
+              `${baseName}_${width}.${fallbackFormat}`,
+            );
+            if (fs.existsSync(testFile)) {
+              existingWidths.push(width);
+            }
+          }
+
+          // If no files found by width check, try to find any file with the base name
+          if (existingWidths.length === 0) {
+            try {
+              const imagesDir = path.join('_site', 'images');
+              if (fs.existsSync(imagesDir)) {
+                const files = fs.readdirSync(imagesDir);
+                const matchingFiles = files.filter((file) =>
+                  file.startsWith(baseName + '_'),
+                );
+
+                // Extract widths from matching files
+                matchingFiles.forEach((file) => {
+                  const widthMatch = file.match(
+                    new RegExp(`${baseName}_(\\d+)\\.(png|jpeg|gif|avif|webp)`),
+                  );
+                  if (widthMatch) {
+                    const width = parseInt(widthMatch[1]);
+                    if (!existingWidths.includes(width)) {
+                      existingWidths.push(width);
+                    }
+                  }
+                });
+              }
+            } catch (error) {
+              console.warn(
+                'Error checking for existing image files:',
+                error.message,
+              );
+            }
+          }
+
+          // Sort existing widths
+          existingWidths.sort((a, b) => b - a);
+
+          // Create breakpoints only for existing widths
+          const existingBreakpoints = existingWidths.map((width) => {
+            const bp = allBreakpoints.find((b) => b.width === width);
+            return bp || { minWidth: null, width };
+          });
+
+          let sources = '';
+          let fallbackSrc = '';
+
+          // Generate sources only for existing files
+          if (existingBreakpoints.length > 0) {
+            ['avif', 'webp', fallbackFormat].forEach((format) => {
+              existingBreakpoints.forEach((bp) => {
+                const filename = `${baseName}_${bp.width}.${format}`;
+                const srcset = `${basePathPrefix}${filename}`;
+                if (bp.minWidth) {
+                  sources += `  <source srcset="${srcset}" media="(min-width: ${bp.minWidth}px)" type="image/${format}" />\n`;
+                } else {
+                  sources += `  <source srcset="${srcset}" type="image/${format}" />\n`;
+                  if (format === fallbackFormat && !fallbackSrc) {
+                    fallbackSrc = `${basePathPrefix}${filename}`;
+                  }
+                }
+              });
+            });
+
+            // If no fallback was set, use the smallest existing file
+            if (!fallbackSrc) {
+              const smallestWidth = existingWidths[existingWidths.length - 1];
+              fallbackSrc = `${basePathPrefix}${baseName}_${smallestWidth}.${fallbackFormat}`;
+            }
+          } else {
+            // Fallback: if no processed files found, use original source
+            fallbackSrc = src;
+          }
+
+          let imgAttributes = `src="${fallbackSrc}" alt="${alt}"`;
+
+          // Автоматическое добавление width и height из метаданных
+          try {
+            const originalImagePath = path.join(
+              __dirname,
+              'src',
+              srcWithoutLeadingSlash,
+            );
+
+            if (fs.existsSync(originalImagePath)) {
+              const metadata = await sharp(originalImagePath).metadata();
+              if (metadata.width && metadata.height) {
+                imgAttributes += ` width="${metadata.width}" height="${metadata.height}"`;
+              }
+            }
+          } catch (error) {
+            // Если не удалось получить размеры, пробуем из уже обработанных файлов
+            try {
+              const processedImagePath = path.join(
+                '_site',
+                'images',
+                `${baseName}_${existingWidths[existingWidths.length - 1] || 480}.${fallbackFormat}`,
+              );
+              if (fs.existsSync(processedImagePath)) {
+                const metadata = await sharp(processedImagePath).metadata();
+                if (metadata.width && metadata.height) {
+                  imgAttributes += ` width="${metadata.width}" height="${metadata.height}"`;
+                }
+              }
+            } catch (innerError) {
+              console.warn(
+                'Could not determine image dimensions:',
+                innerError.message,
+              );
+            }
+          }
+
+          if (className) imgAttributes += ` class="${className}"`;
+          if (loading) imgAttributes += ` loading="${loading}"`;
+          if (decoding) imgAttributes += ` decoding="${decoding}"`;
+          if (fetchpriority)
+            imgAttributes += ` fetchpriority="${fetchpriority}"`;
+
+          const newPicture = `<picture>
+${sources}  <img ${imgAttributes} />
+</picture>`;
+
+          content = content.replace(originalMatch, newPicture);
+        }
+      }
+      return content;
+    },
+  );
 
   // HTML formatting with Prettier
   eleventyConfig.addTransform('prettier', function (content, outputPath) {
@@ -180,6 +397,7 @@ module.exports = function (eleventyConfig) {
           printWidth: 120,
           tabWidth: 2,
           useTabs: false,
+          htmlWhitespaceSensitivity: 'css',
         });
       } catch (error) {
         console.warn('Prettier formatting failed:', error.message);
@@ -202,11 +420,10 @@ module.exports = function (eleventyConfig) {
 
   // Development server settings
   eleventyConfig.setServerOptions({
-    port: 8080,
+    port: process.env.PORT || 8080,
     showAllHosts: true,
   });
 
-  // Main Eleventy configuration
   return {
     dir: {
       input: 'src',
@@ -218,8 +435,6 @@ module.exports = function (eleventyConfig) {
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
     templateFormats: ['md', 'njk', 'html'],
-
-    // Performance optimization settings
-    pathPrefix: '/', // Change to your base path if needed
+    pathPrefix: '/',
   };
 };

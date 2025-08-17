@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Дитяча школа мистецтв №5 Харківської міської ради</title>
-    <link rel="preload" as="image" href="images/logo/logo-light.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
@@ -463,15 +462,36 @@
             >
               <div class="gap-3 lg:flex-row flex flex-col items-center">
                 <a href="#">
-                  <img
-                    src="images/logo/logo-light.svg"
-                    alt="Логотип компании Art5"
-                    class="lg:size-20 xl:size-25 size-30"
-                    loading="eager"
-                    fetchpriority="high"
-                    width="120"
-                    height="120"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        images/logo/logo_original-light_96.avif   96w,
+                        images/logo/logo_original-light_128.avif 128w,
+                        images/logo/logo_original-light_192.avif 192w,
+                        images/logo/logo_original-light_256.avif 256w,
+                        images/logo/logo_original-light_384.avif 384w
+                      "
+                      sizes="(max-width: 768px) 96px, 128px"
+                      type="image/avif"
+                    />
+                    <source
+                      srcset="
+                        images/logo/logo_original-light_96.webp   96w,
+                        images/logo/logo_original-light_128.webp 128w,
+                        images/logo/logo_original-light_192.webp 192w,
+                        images/logo/logo_original-light_256.webp 256w,
+                        images/logo/logo_original-light_384.webp 384w
+                      "
+                      sizes="(max-width: 768px) 96px, 128px"
+                      type="image/webp"
+                    />
+                    <img
+                      src="images/logo/logo_original-light_256.png"
+                      alt="Дитяча школа мистецтв №5 Харківської міської ради"
+                      width="128"
+                      height="128"
+                    />
+                  </picture>
                 </a>
                 <ul class="lg:block flex flex-col items-center">
                   <li>
@@ -1091,38 +1111,12 @@
         <div class="px-30 mx-auto">
           <div class="gap-4 grid grid-cols-2">
             <div class="relative z-1 flex flex-col items-center text-center">
-              <picture
-                ><source
-                  type="image/avif"
-                  srcset="
-                    images/bird-80.avif   80w,
-                    images/bird-100.avif 100w,
-                    images/bird-120.avif 120w,
-                    images/bird-160.avif 160w
-                  " />
-                <source
-                  type="image/webp"
-                  srcset="
-                    images/bird-80.webp   80w,
-                    images/bird-100.webp 100w,
-                    images/bird-120.webp 120w,
-                    images/bird-160.webp 160w
-                  " />
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="images/bird-80.png"
-                  class="mb-4"
-                  alt="bird"
-                  width="160"
-                  height="135"
-                  srcset="
-                    images/bird-80.png   80w,
-                    images/bird-100.png 100w,
-                    images/bird-120.png 120w,
-                    images/bird-160.png 160w
-                  "
-              /></picture>
+              <picture>
+                <source srcset="images/bird_173.avif" type="image/avif" />
+                <source srcset="images/bird_173.webp" type="image/webp" />
+                <source srcset="images/bird_173.png" type="image/png" />
+                <img src="images/bird_173.png" alt="bird" class="mb-4" loading="lazy" decoding="async" />
+              </picture>
               <h1 class="max-w-120 mb-4 text-6xl font-black leading-[1.04]">
                 A lifetime of
                 <span class="text-7xl">Confidence</span>
@@ -1138,376 +1132,145 @@
               >
                 Докладніше
               </a>
-              <picture
-                ><source
-                  type="image/avif"
-                  srcset="
-                    images/circle-80.avif   80w,
-                    images/circle-100.avif 100w,
-                    images/circle-120.avif 120w,
-                    images/circle-160.avif 160w,
-                    images/circle-200.avif 200w,
-                    images/circle-240.avif 240w,
-                    images/circle-320.avif 320w,
-                    images/circle-480.avif 480w,
-                    images/circle-640.avif 640w,
-                    images/circle-768.avif 768w
-                  " />
-                <source
-                  type="image/webp"
-                  srcset="
-                    images/circle-80.webp   80w,
-                    images/circle-100.webp 100w,
-                    images/circle-120.webp 120w,
-                    images/circle-160.webp 160w,
-                    images/circle-200.webp 200w,
-                    images/circle-240.webp 240w,
-                    images/circle-320.webp 320w,
-                    images/circle-480.webp 480w,
-                    images/circle-640.webp 640w,
-                    images/circle-768.webp 768w
-                  " />
+              <picture>
+                <source srcset="images/circle_768.avif" media="(min-width: 360px)" type="image/avif" />
+                <source srcset="images/circle_480.avif" type="image/avif" />
+                <source srcset="images/circle_768.webp" media="(min-width: 360px)" type="image/webp" />
+                <source srcset="images/circle_480.webp" type="image/webp" />
+                <source srcset="images/circle_768.png" media="(min-width: 360px)" type="image/png" />
+                <source srcset="images/circle_480.png" type="image/png" />
                 <img
+                  src="images/circle_480.png"
+                  alt="decor circle"
+                  class="inset-x-0 top-4 absolute -z-1"
                   loading="lazy"
                   decoding="async"
-                  src="images/circle-80.png"
-                  class="inset-x-0 top-4 absolute -z-1"
-                  alt="decor circle"
-                  width="768"
-                  height="551"
-                  srcset="
-                    images/circle-80.png   80w,
-                    images/circle-100.png 100w,
-                    images/circle-120.png 120w,
-                    images/circle-160.png 160w,
-                    images/circle-200.png 200w,
-                    images/circle-240.png 240w,
-                    images/circle-320.png 320w,
-                    images/circle-480.png 480w,
-                    images/circle-640.png 640w,
-                    images/circle-768.png 768w
-                  "
-              /></picture>
+                />
+              </picture>
             </div>
             <div class="gap-4 grid grid-cols-2">
-              <picture
-                ><source
-                  type="image/avif"
-                  srcset="
-                    images/kid1-80.avif   80w,
-                    images/kid1-100.avif 100w,
-                    images/kid1-120.avif 120w,
-                    images/kid1-160.avif 160w,
-                    images/kid1-200.avif 200w,
-                    images/kid1-240.avif 240w
-                  " />
-                <source
-                  type="image/webp"
-                  srcset="
-                    images/kid1-80.webp   80w,
-                    images/kid1-100.webp 100w,
-                    images/kid1-120.webp 120w,
-                    images/kid1-160.webp 160w,
-                    images/kid1-200.webp 200w,
-                    images/kid1-240.webp 240w
-                  " />
+              <picture>
+                <source srcset="images/kid1_300.avif" type="image/avif" />
+                <source srcset="images/kid1_300.webp" type="image/webp" />
+                <source srcset="images/kid1_300.png" type="image/png" />
                 <img
-                  loading="lazy"
-                  decoding="async"
-                  src="images/kid1-80.png"
-                  class="parallax ease-out transition-transform duration-300"
-                  style="transform: translate(4.67px, 11.23px)"
-                  data-offset-x="4.67"
-                  data-offset-y="11.23"
-                  data-speed="10"
+                  src="images/kid1_300.png"
                   alt="kid 1"
-                  width="240"
-                  height="331"
-                  srcset="
-                    images/kid1-80.png   80w,
-                    images/kid1-100.png 100w,
-                    images/kid1-120.png 120w,
-                    images/kid1-160.png 160w,
-                    images/kid1-200.png 200w,
-                    images/kid1-240.png 240w
-                  "
-              /></picture>
-              <picture
-                ><source
-                  type="image/avif"
-                  srcset="
-                    images/kid2-80.avif   80w,
-                    images/kid2-100.avif 100w,
-                    images/kid2-120.avif 120w,
-                    images/kid2-160.avif 160w,
-                    images/kid2-200.avif 200w,
-                    images/kid2-240.avif 240w,
-                    images/kid2-320.avif 320w
-                  " />
-                <source
-                  type="image/webp"
-                  srcset="
-                    images/kid2-80.webp   80w,
-                    images/kid2-100.webp 100w,
-                    images/kid2-120.webp 120w,
-                    images/kid2-160.webp 160w,
-                    images/kid2-200.webp 200w,
-                    images/kid2-240.webp 240w,
-                    images/kid2-320.webp 320w
-                  " />
-                <img
+                  class="parallax ease-out transition-transform duration-300"
                   loading="lazy"
                   decoding="async"
-                  src="images/kid2-80.png"
-                  class="parallax ease-out transition-transform duration-300"
-                  style="transform: translate(5.34px, 21.46px)"
-                  data-offset-x="5.34"
-                  data-offset-y="21.46"
-                  data-speed="12"
+                />
+              </picture>
+              <picture>
+                <source srcset="images/kid2_370.avif" type="image/avif" />
+                <source srcset="images/kid2_370.webp" type="image/webp" />
+                <source srcset="images/kid2_370.png" type="image/png" />
+                <img
+                  src="images/kid2_370.png"
                   alt="kid 2"
-                  width="320"
-                  height="358"
-                  srcset="
-                    images/kid2-80.png   80w,
-                    images/kid2-100.png 100w,
-                    images/kid2-120.png 120w,
-                    images/kid2-160.png 160w,
-                    images/kid2-200.png 200w,
-                    images/kid2-240.png 240w,
-                    images/kid2-320.png 320w
-                  "
-              /></picture>
-              <picture
-                ><source
-                  type="image/avif"
-                  srcset="
-                    images/kid3-80.avif   80w,
-                    images/kid3-100.avif 100w,
-                    images/kid3-120.avif 120w,
-                    images/kid3-160.avif 160w,
-                    images/kid3-200.avif 200w,
-                    images/kid3-240.avif 240w,
-                    images/kid3-320.avif 320w
-                  " />
-                <source
-                  type="image/webp"
-                  srcset="
-                    images/kid3-80.webp   80w,
-                    images/kid3-100.webp 100w,
-                    images/kid3-120.webp 120w,
-                    images/kid3-160.webp 160w,
-                    images/kid3-200.webp 200w,
-                    images/kid3-240.webp 240w,
-                    images/kid3-320.webp 320w
-                  " />
-                <img
+                  class="parallax ease-out transition-transform duration-300"
                   loading="lazy"
                   decoding="async"
-                  src="images/kid3-80.png"
-                  class="parallax ease-out transition-transform duration-300"
-                  style="transform: translate(7.99px, 31.69px)"
-                  data-offset-x="7.99"
-                  data-offset-y="31.69"
-                  data-speed="8"
+                />
+              </picture>
+              <picture>
+                <source srcset="images/kid3_384.avif" type="image/avif" />
+                <source srcset="images/kid3_384.webp" type="image/webp" />
+                <source srcset="images/kid3_384.png" type="image/png" />
+                <img
+                  src="images/kid3_384.png"
                   alt="kid 3"
-                  width="320"
-                  height="294"
-                  srcset="
-                    images/kid3-80.png   80w,
-                    images/kid3-100.png 100w,
-                    images/kid3-120.png 120w,
-                    images/kid3-160.png 160w,
-                    images/kid3-200.png 200w,
-                    images/kid3-240.png 240w,
-                    images/kid3-320.png 320w
-                  "
-              /></picture>
-              <picture
-                ><source
-                  type="image/avif"
-                  srcset="
-                    images/kid4-80.avif   80w,
-                    images/kid4-100.avif 100w,
-                    images/kid4-120.avif 120w,
-                    images/kid4-160.avif 160w,
-                    images/kid4-200.avif 200w,
-                    images/kid4-240.avif 240w,
-                    images/kid4-320.avif 320w
-                  " />
-                <source
-                  type="image/webp"
-                  srcset="
-                    images/kid4-80.webp   80w,
-                    images/kid4-100.webp 100w,
-                    images/kid4-120.webp 120w,
-                    images/kid4-160.webp 160w,
-                    images/kid4-200.webp 200w,
-                    images/kid4-240.webp 240w,
-                    images/kid4-320.webp 320w
-                  " />
-                <img
+                  class="parallax ease-out transition-transform duration-300"
                   loading="lazy"
                   decoding="async"
-                  src="images/kid4-80.png"
-                  class="parallax ease-out transition-transform duration-300"
-                  style="transform: translate(16.32px, 42px)"
-                  data-offset-x="16.32"
-                  data-offset-y="42"
-                  data-speed="15"
+                />
+              </picture>
+              <picture>
+                <source srcset="images/kid4_330.avif" type="image/avif" />
+                <source srcset="images/kid4_330.webp" type="image/webp" />
+                <source srcset="images/kid4_330.png" type="image/png" />
+                <img
+                  src="images/kid4_330.png"
                   alt="kid 4"
-                  width="320"
-                  height="314"
-                  srcset="
-                    images/kid4-80.png   80w,
-                    images/kid4-100.png 100w,
-                    images/kid4-120.png 120w,
-                    images/kid4-160.png 160w,
-                    images/kid4-200.png 200w,
-                    images/kid4-240.png 240w,
-                    images/kid4-320.png 320w
-                  "
-              /></picture>
+                  class="parallax ease-out transition-transform duration-300"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
           </div>
-          <picture
-            ><source
-              type="image/avif"
-              srcset="
-                images/shape1-80.avif   80w,
-                images/shape1-100.avif 100w,
-                images/shape1-120.avif 120w,
-                images/shape1-160.avif 160w,
-                images/shape1-200.avif 200w,
-                images/shape1-240.avif 240w
-              " />
-            <source
-              type="image/webp"
-              srcset="
-                images/shape1-80.webp   80w,
-                images/shape1-100.webp 100w,
-                images/shape1-120.webp 120w,
-                images/shape1-160.webp 160w,
-                images/shape1-200.webp 200w,
-                images/shape1-240.webp 240w
-              " />
+          <picture>
+            <source srcset="images/shape1_292.avif" type="image/avif" />
+            <source srcset="images/shape1_292.webp" type="image/webp" />
+            <source srcset="images/shape1_292.png" type="image/png" />
             <img
-              loading="lazy"
-              decoding="async"
-              src="images/shape1-80.png"
-              class="left-0 top-0 absolute -z-2"
+              src="images/shape1_292.png"
               alt="hero shape 1"
-              width="240"
-              height="115"
-              srcset="
-                images/shape1-80.png   80w,
-                images/shape1-100.png 100w,
-                images/shape1-120.png 120w,
-                images/shape1-160.png 160w,
-                images/shape1-200.png 200w,
-                images/shape1-240.png 240w
-              "
-          /></picture>
-          <picture
-            ><source
-              type="image/avif"
-              srcset="
-                images/shape2-80.avif   80w,
-                images/shape2-100.avif 100w,
-                images/shape2-120.avif 120w,
-                images/shape2-160.avif 160w
-              " />
-            <source
-              type="image/webp"
-              srcset="
-                images/shape2-80.webp   80w,
-                images/shape2-100.webp 100w,
-                images/shape2-120.webp 120w,
-                images/shape2-160.webp 160w
-              " />
-            <img
+              class="left-0 top-0 absolute -z-2"
               loading="lazy"
               decoding="async"
-              src="images/shape2-80.png"
-              class="right-0 top-0 absolute -z-2"
+            />
+          </picture>
+          <picture>
+            <source srcset="images/shape2_184.avif" type="image/avif" />
+            <source srcset="images/shape2_184.webp" type="image/webp" />
+            <source srcset="images/shape2_184.png" type="image/png" />
+            <img
+              src="images/shape2_184.png"
               alt="hero shape 2"
-              width="160"
-              height="186"
-              srcset="
-                images/shape2-80.png   80w,
-                images/shape2-100.png 100w,
-                images/shape2-120.png 120w,
-                images/shape2-160.png 160w
-              "
-          /></picture>
-          <picture
-            ><source
-              type="image/avif"
-              srcset="
-                images/shape3-80.avif   80w,
-                images/shape3-100.avif 100w,
-                images/shape3-120.avif 120w,
-                images/shape3-160.avif 160w
-              " />
-            <source
-              type="image/webp"
-              srcset="
-                images/shape3-80.webp   80w,
-                images/shape3-100.webp 100w,
-                images/shape3-120.webp 120w,
-                images/shape3-160.webp 160w
-              " />
-            <img
+              class="right-0 top-0 absolute -z-2"
               loading="lazy"
               decoding="async"
-              src="images/shape3-80.png"
-              class="animate-movebounce -bottom-15 left-0 absolute"
+            />
+          </picture>
+          <picture>
+            <source srcset="images/shape3_199.avif" type="image/avif" />
+            <source srcset="images/shape3_199.webp" type="image/webp" />
+            <source srcset="images/shape3_199.png" type="image/png" />
+            <img
+              src="images/shape3_199.png"
               alt="hero shape 3"
-              width="160"
-              height="209"
-              srcset="
-                images/shape3-80.png   80w,
-                images/shape3-100.png 100w,
-                images/shape3-120.png 120w,
-                images/shape3-160.png 160w
-              "
-          /></picture>
-          <picture
-            ><source type="image/avif" srcset="images/shape4-59.avif 59w" />
-            <source type="image/webp" srcset="images/shape4-59.webp 59w" />
-            <img
+              class="animate-movebounce -bottom-15 left-0 absolute"
               loading="lazy"
               decoding="async"
-              src="images/shape4-59.png"
-              class="animate-rotate absolute bottom-[12%] left-[44%] -z-1"
+            />
+          </picture>
+          <picture>
+            <source srcset="images/shape4_59.avif" type="image/avif" />
+            <source srcset="images/shape4_59.webp" type="image/webp" />
+            <source srcset="images/shape4_59.png" type="image/png" />
+            <img
+              src="images/shape4_59.png"
               alt="hero shape 4"
-              width="59"
-              height="57"
-          /></picture>
-          <picture
-            ><source type="image/avif" srcset="images/shape5-64.avif 64w" />
-            <source type="image/webp" srcset="images/shape5-64.webp 64w" />
-            <img
+              class="animate-rotate absolute bottom-[12%] left-[44%] -z-1"
               loading="lazy"
               decoding="async"
-              src="images/shape5-64.png"
-              class="animate-movebounce absolute top-[16%] left-[48%] -z-1"
+            />
+          </picture>
+          <picture>
+            <source srcset="images/shape5_64.avif" type="image/avif" />
+            <source srcset="images/shape5_64.webp" type="image/webp" />
+            <source srcset="images/shape5_64.png" type="image/png" />
+            <img
+              src="images/shape5_64.png"
               alt="hero shape 5"
-              width="64"
-              height="66"
-          /></picture>
-          <picture
-            ><source type="image/avif" srcset="images/shape6-80.avif 80w, images/shape6-100.avif 100w" />
-            <source type="image/webp" srcset="images/shape6-80.webp 80w, images/shape6-100.webp 100w" />
-            <img
+              class="animate-movebounce absolute top-[16%] left-[48%] -z-1"
               loading="lazy"
               decoding="async"
-              src="images/shape6-80.png"
-              class="animate-moveleftbounce absolute bottom-[25%] left-[50%] -z-1"
+            />
+          </picture>
+          <picture>
+            <source srcset="images/shape6_110.avif" type="image/avif" />
+            <source srcset="images/shape6_110.webp" type="image/webp" />
+            <source srcset="images/shape6_110.png" type="image/png" />
+            <img
+              src="images/shape6_110.png"
               alt="hero shape 6"
-              width="100"
-              height="99"
-              srcset="images/shape6-80.png 80w, images/shape6-100.png 100w"
-          /></picture>
+              class="animate-moveleftbounce absolute bottom-[25%] left-[50%] -z-1"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         </div>
       </section>
       <!-- Hero END -->
