@@ -2,6 +2,3 @@ node_modules
 .vscode
 .idea
 .env
-autocommit.sh
-changes.txt
-smart-commit.sh
